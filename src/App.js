@@ -21,8 +21,19 @@ import CadastroTemas from './pages/Temas'
 import CadastroConcluido from './pages/Concluido'
 import EleitorResultados from './pages/EleitorResultados'
 
+const breakpoints = ["360px", "768px", "1024px", "1440px"];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+
+const newTheme = {
+  ...theme,
+  breakpoints
+};
+
 const App = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={newTheme}>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
