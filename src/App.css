@@ -11,6 +11,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input {
+  /* border: 1px solid #C4C4C4 !important; */
+  width: 100%;
+}
+
+div[type="radio"] {
+  border-color: #A8A8A8 !important;
+}
+
+label {
+  color: #39393A !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
 .App {
   text-align: center;
 }
