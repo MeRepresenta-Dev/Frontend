@@ -41,7 +41,7 @@ const Header = props => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/candidato">
                   Candidata/o
                 </a>
               </li>

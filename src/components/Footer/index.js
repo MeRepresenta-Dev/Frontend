@@ -1,9 +1,5 @@
 import React from 'react'
 
-import {
-  Box,
-} from '@chakra-ui/core'
-
 import whatsapp from './icons/whatsapp.svg'
 import youtube from './icons/youtube.svg'
 import facebook from './icons/facebook.svg'

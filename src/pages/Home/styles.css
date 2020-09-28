@@ -1,0 +1,164 @@
+.hero {
+  margin: 3rem 6rem;
+}
+
+.heroContent {
+  color: #4F4F4F;
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+  flex: 1;
+}
+
+.heroContent p {
+  color: #39393A;
+}
+
+.heroImage {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.heroButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroButtons > * {
+  margin-bottom: 10px;
+}
+
+.presentation {
+  background-color: #1B9AAA;
+  color: #ffffff;
+  padding: 3rem 6rem;
+}
+
+.presentationVideo {
+  flex: 1;
+}
+
+.presentationContent {
+  flex: 1;
+}
+
+.presentationContent span {
+  color: #FFC43D;
+}
+
+.topics {
+  padding: 3rem 0;
+}
+
+.topicsHeading {
+  color: #39393A;
+  text-align: center;
+  width: 100%;
+}
+
+.topicsHeading span {
+  color: #EF476F;
+}
+
+.topicsBoxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  width: 100%; 
+}
+
+.topicsBoxes > div {
+  align-items: center;
+  display: flex;
+  font-family: 'Montserrat';
+  font-size: 36px;
+  font-weight: bold;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.responsive {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+}
+
+.topicsBoxes .pink {
+  background-color: #EF476F;
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+}
+
+.topicsBoxes .blue {
+  background-color: #1B9AAA;
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+}
+
+.topicsBoxes .yellow {
+  background-color: #FFC43D;
+  color: #ffffff;
+  padding: 30px;
+  text-align: center;
+}
+
+.topicsBoxes .image {
+  overflow: hidden;
+}
+
+.topicsBoxes .image img {
+  height: 100%;
+  width: 100%;
+}
+
+.join {
+  margin: 3rem 6rem;
+}
+
+.joinWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.joinImage {
+  display: flex;
+  flex: 1;
+}
+
+.joinContent {
+  color: #4F4F4F;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.joinContent span {
+  color: #1B9AAA;
+}
+
+.joinButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.makePossible {
+  margin: 3rem 6rem;
+}
+
+.makePossibleHeading {
+  color: #4F4F4F;
+  text-align: center;
+}
+
+.makePossibleHeading span {
+  color: #EF476F;
+}
+
+.makePossible img {
+  max-height: 236px;
+  max-width: 290px;
+}

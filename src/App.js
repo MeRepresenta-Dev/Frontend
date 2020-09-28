@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Routes,
+  Switch,
   Route,
 } from "react-router-dom";
 
@@ -11,11 +11,14 @@ import {
 
 import './App.css';
 
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 import Home from './pages/Home'
 import Cadastro from './pages/Cadastro'
 import Login from './pages/Login'
-import CadastroVerificacao from './pages/Verificacao'
-import CadastroFormulario from './pages/Formulario'
+import CadastroVerificacao from './pages/VerificacaoSMS'
+import DadosForm from './pages/DadosForm';
 import CadastroPautas from './pages/Pautas'
 import CadastroTemas from './pages/Temas'
 import CadastroConcluido from './pages/Concluido'
@@ -34,17 +37,19 @@ const newTheme = {
 
 const App = () => (
   <ThemeProvider theme={newTheme}>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/cadastro" element={<Cadastro />} />
-      <Route path="/cadastro/verificacao" element={<CadastroVerificacao />} />
-      <Route path="/cadastro/candidato" element={<CadastroFormulario />} />
-      <Route path="/cadastro/pautas" element={<CadastroPautas />} />
-      <Route path="/cadastro/temas" element={<CadastroTemas />} />
-      <Route path="/cadastro/concluido" element={<CadastroConcluido />} />
-      <Route path="/candidato/:slug" element={<EleitorResultados />} />
-    </Routes>
+    <Header />
+    <Switch>
+      <Route exact path="/" children={<Home />} />
+      <Route path="/login" children={<Login />} />
+      <Route path="/cadastro/candidato" children={<Cadastro />} />
+      <Route path="/cadastro/candidato-verificacao" children={<CadastroVerificacao />} />
+      <Route path="/cadastro/candidato-dados" children={<DadosForm />} />
+      <Route path="/cadastro/candidato-pautas" children={<CadastroPautas />} />
+      <Route path="/cadastro/candidato-temas" children={<CadastroTemas />} />
+      <Route path="/cadastro/candidato-concluido" children={<CadastroConcluido />} />
+      <Route path="/candidato/:slug" children={<EleitorResultados />} />
+    </Switch>
+    <Footer />
   </ThemeProvider>
 )
 
