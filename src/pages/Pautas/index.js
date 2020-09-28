@@ -1,89 +1,51 @@
-import React, {useState} from 'react'
-import {Box, Heading, Text, RadioGroup, Radio, Button} from '@chakra-ui/core'
+import React from "react"
+import { useForm, useStep } from "react-hooks-helper"
 
-import './styles.css'
+import Step1 from './Step1'
+import Step2 from './Step2'
+import Step3 from './Step3'
+import Step4 from './Step4'
+import Step5 from './Step5'
 
-export default function Pautas() {
+import "./styles.css"
 
-  const [step, setStep] = useState(1);
-  const [value, setValue] = useState(1);
+const steps = [
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 }
+]
 
-  return(
-    <main className="pauta">
-      <section>
-      <div className="container">
-        {(()=>{
-          if(step===1){
-            return <div className="retangulo-rosa"></div>;
-          }else{
-            return <div className="retangulo-cinza"></div>;
-          }
-        })()}
-        {(()=>{
-          if(step===2){
-            return <div className="retangulo-rosa"></div>;
-          }else{
-            return <div className="retangulo-cinza"></div>;
-          }
-        })()}
-      </div>
-      <Heading className="pautaTitulo" as="h3" size="lg">Pautas #MeRepresenta</Heading>
-        {
-          (()=>{
-            switch(step){
-              case 1: 
-                return(
-                  <Box 
-                  >
-                    <Heading as="h3" size="lg">#LGBT+</Heading>
-                    <Box>
-                      <Heading as="h6" size="xs">Pauta 01 de 22</Heading>
-                      <Heading as="h4" size="md">Discriminar LGBTs deve ser crime.</Heading>
-                      <Text>O Brasil é um dos países que mais matam LGBTs no mundo, em especial travestis e transexuais. Não há legislação que considere crime o preconceito contra lésbicas, transsexuais e travestis, bissexuais, gays. </Text>
-                      <Heading>Qual seu posicionamento?</Heading>
-                      <RadioGroup onChange={e => setValue(e.target.value)} value={value}>
-                        <Radio value={1}>Sou a FAVOR da criminalização da LGBTfobia</Radio>
-                        <Radio value={2}>Sou CONTRA a criminalização da LGBTfobia </Radio>
-                      </RadioGroup>
-                    </Box>
-                    <br></br>
-                    <Button 
-                      variantColor="teal" 
-                      variant="solid"
-                      onClick={() => setStep(step+1)}>
-                      Próximo
-                    </Button>
-                  </Box>
-                );
-
-              case 2:
-                return(
-                  <Box 
-                  >
-                    <Heading as="h3" size="lg">#LGBT+</Heading>
-                    <Box>
-                      <Heading as="h6" size="xs">Pauta 02 de 22</Heading>
-                      <Heading as="h4" size="md">Trans e travestis podem usar o banheiro que quiserem.</Heading>
-                      <Text>A população transexual e travesti é frequentemente impedida de utilizar banheiros, masculinos ou femininos em lugares públicos e comerciais. No Brasil ainda não existe uma legislação para esse assunto.</Text>
-                      <Heading>Qual seu posicionamento?</Heading>
-                      <RadioGroup onChange={e => setValue(e.target.value)} value={value}>
-                        <Radio value={1}>Sou a FAVOR de pessoas trans e travestis usar o banheiro que quiserem</Radio>
-                        <Radio value={2}>Sou CONTRA pessoas trans e travestis usar o banheiro que quiserem </Radio>
-                      </RadioGroup>
-                    </Box>
-                    <br></br>
-                    <Button 
-                      variantColor="teal" 
-                      variant="solid"
-                      onClick={() => setStep(step-1)}>
-                      Anterior
-                    </Button>
-                  </Box>
-                );
-            }
-          })()}
-      </section>
-    </main>
-  );
-  
+const defaultData = {
+  firstName: "Jane",
+  lastName: "Doe",
+  nickName: "Jan",
+  address: "200 South Main St",
+  city: "Anytown",
+  state: "CA",
+  zip: "90505",
+  email: "email@domain.com",
+  phone: "+61 4252 454 332"
 }
+
+const CadastroPautas = ({ images }) => {
+  const [formData, setForm] = useForm(defaultData);
+  const { step, navigation } = useStep({ initialStep: 0, steps })
+  const { id } = step
+
+  const props = { formData, setForm, navigation };
+
+  switch (id) {
+    case 1:
+      return <Step1 {...props} />
+    case 2:
+      return <Step2 {...props} />
+    case 3:
+      return <Step3 {...props} />
+    default:
+      return null
+  }
+};
+
+export default CadastroPautas
