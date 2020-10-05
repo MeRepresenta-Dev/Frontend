@@ -1,0 +1,29 @@
+.pauta {
+  margin-left: 12rem;
+  margin-right: 12rem;
+}
+
+.pautaTitulo {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.retangulo-rosa{
+  width:40px;
+  height:8px;
+  background:#EF476F;
+  margin: 2px;
+}
+
+.retangulo-cinza{
+  width:40px;
+  height:8px;
+  background: gray;
+  margin: 2px;
+}
