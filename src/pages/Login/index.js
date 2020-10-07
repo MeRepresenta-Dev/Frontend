@@ -1,18 +1,15 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Form } from "react-final-form";
-
 import { Box, Button, Heading } from "@chakra-ui/core";
+import api from "../../services/api";
 import "./styles.css";
 
-import validate from "../../utils/validate";
 import InputControl from "../../components/InputControl";
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const onSubmit = async (values) => {
-  await sleep(300);
-  window.alert(JSON.stringify(values, 0, 2));
+  //const response = await api.post("/login", values);
+  console.log(JSON.stringify(values, 0, 2));
 };
 
 export default function Login() {
@@ -31,7 +28,6 @@ export default function Login() {
         </Heading>
         <Form
           onSubmit={onSubmit}
-          validate={validate}
           render={({ handleSubmit, form, errors, submitting }) => (
             <Box
               as="form"
