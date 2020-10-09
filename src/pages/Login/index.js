@@ -8,8 +8,11 @@ import "./styles.css";
 import InputControl from "../../components/InputControl";
 
 const onSubmit = async (values) => {
-  //const response = await api.post("/login", values);
-  console.log(JSON.stringify(values, 0, 2));
+  const response = await api.post("/login", values);
+
+  if(response.status !== 200){
+    return alert('Credenciais não válidas');
+  }
 };
 
 export default function Login() {
@@ -39,7 +42,7 @@ export default function Login() {
             >
               <Box className="loginInputs">
                 <InputControl name="email" label="E-mail" />
-                <InputControl name="senha" label="Senha" />
+                <InputControl type="password" name="senha" label="Senha" />
               </Box>
               <Box className="loginButtons">
                 <Button
