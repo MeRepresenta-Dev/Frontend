@@ -1,0 +1,66 @@
+.login {
+    margin: 6rem 0;
+  }
+  
+  .loginWrapper {
+    min-height: 450px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .loginWrapper form {
+    border-width: unset;
+    border-radius: unset;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .loginWrapper input {
+    max-width: 367px;
+    width: 100%;
+  }
+  
+  .loginHeading {
+    color: #4F4F4F;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
+  
+  .loginInputs {
+    margin-bottom: 40px;
+  }
+  
+  .loginButtons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .loginButtons > * {
+    display: block;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  
+  .forgetPassword {
+    color: #198492;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #frase{
+    text-align: center;
+    font-size: 18px;
+  }
+
+  #enviarNovamente{
+    cursor: pointer;
+  }
+
+  #enviarNovamente:hover{
+    text-decoration: underline;
+  }
+
+  #btnContinuar{
+    cursor: pointer;
+  }
