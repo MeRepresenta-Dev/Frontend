@@ -64,3 +64,19 @@
   #btnContinuar{
     cursor: pointer;
   }
+
+  .campos{
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    text-align: center;
+    margin-right: 45px;;
+  }
+
+  #teste{
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }

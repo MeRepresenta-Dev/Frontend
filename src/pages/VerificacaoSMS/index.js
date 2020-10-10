@@ -8,7 +8,11 @@ import "./styles.css";
 import InputControl from "../../components/InputControl";
 
 const onSubmit = async (values) => {
-  const response = await api.post("/validacao", values);
+  const {codigo1, codigo2, codigo3, codigo4} = values;
+  
+  const code = `${codigo1}${codigo2}${codigo3}${codigo4}`;
+
+  const response = await api.post("/validacao", {codigo: code});
 
   if(response.status !== 200){
     return alert('Código inválido');
@@ -40,10 +44,22 @@ export default function Login() {
               shadow="1px 1px 3px rgba(0,0,0,0.3)"
               onSubmit={handleSubmit}
             >
+              <div id="teste">
+                <Box className="campos">
+                  <InputControl className="campos2" name="codigo1" maxlength="1" />
+                </Box>
+                <Box className="campos">
+                  <InputControl className="campos2" name="codigo2" maxlength="1" />
+                </Box>
+                <Box className="campos">
+                  <InputControl className="campos2" name="codigo3" maxlength="1" />
+                </Box>
+                <Box className="campos">
+                  <InputControl className="campos2" name="codigo4" maxlength="1" />
+                </Box>
+              </div>
+              
               <br></br>
-              <Box className="loginInputs">
-                <InputControl name="codigo" label="Código de verificação" />
-              </Box>
               <Box className="loginButtons">
                 <a id="enviarNovamente" className="forgetPassword" onClick={enviarNovamente}>
                   Enviar novamente
