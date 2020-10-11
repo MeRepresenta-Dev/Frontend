@@ -24,6 +24,22 @@ import feministaJuristas from './images/feminista-juristas.png'
 import cidadaniaInteligente from './images/cidadania-inteligente.png'
 import voteLGBT from './images/vote-lgbt.png'
 
+import abglt from './images/abglt-168px.png'
+import aliancaLGBT from './images/Laço-Aliança-2-168px.png'
+import apoinme from './images/Laço-Aliança-2-168px (1).png'
+import cfemea from './images/Laço-Aliança-2-168px (2).png'
+import conaq from './images/abglt-168px (1).png'
+import generoEnumero from './images/RJC-logo3-min-168px.png'
+import instutoSoudapaz from './images/RJC-logo3-min-168px (1).png'
+import intervozaes from './images/LogoIntervozes 380x168 px.png'
+import ittc from './images/abglt-168px (2).png'
+import movimentoDosTrabalhadores from './images/abglt-168px (3).png'
+import plataformaBrasileiraDePolitica from './images/PBPD-168px.png'
+import sistemaPolitico from './images/abglt-168px (4).png'
+import redeJustiça from './images/abglt-168px (5).png'
+import azMina from './images/abglt-168px (6).png'
+import movimentoTrasparenciaPartidaria from './images/PBPD-168px (1).png'
+
 export default function Home() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
 
@@ -45,13 +61,13 @@ export default function Home() {
                 Ajude seus eleitores chegarem até você!
               </Heading>
               <Text fontSize="xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper eros sed risus aliquam, vel pretium urna cursus.
+                  Quer aparecer para as eleitoras e eleitores que se preocupam com as mesmas pautas que você? Cadastre-se e traga mais visibilidade para sua candidatura.
               </Text>
             </Box>
             <Box className="heroButtons">
-              <Button>SOU CANDIDATO</Button>
-              <Button>Quero ser voluntária/o</Button>
-              <Button>Sou eleitor/a</Button>
+              <Button className="pinkButton">SOU CANDIDATO</Button>
+              <Button className="blueButton">Quero ser voluntária/o</Button>
+              <Button className="grayButton">Sou eleitor/a</Button>
             </Box>
           </Box>
           <Box className="heroImage">
@@ -152,8 +168,8 @@ export default function Home() {
                 Faça parte do <span>#MeRepresenta</span>
               </Heading>
               <Box className="joinButtons">
-                <Button>QUERO SER VOLUNTÁRIA/O</Button>
-                <Button>Quero saber mais</Button>
+                <Button className="blueButton">QUERO SER VOLUNTÁRIA/O</Button>
+                <Button className="grayButton">Quero saber mais</Button>
               </Box>
             </Box>
           </Box>
@@ -179,6 +195,70 @@ export default function Home() {
               <img src={voteLGBT} alt="Vote LGBT" />
             </Box>
           </Flex>
+        </Box>
+        <Box>
+          <Heading className="makePossibleHeading">
+             Parcerias
+          </Heading>
+          <Flex wrap="wrap" justifyContent="space-between">
+              <Box className="makePossibleImage">
+                <img src={abglt} alt="ABGLT" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={aliancaLGBT} alt="Aliança LGTB+" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={apoinme} alt="apoinme" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={cfemea} alt="cfemea" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={conaq} alt="Conaq" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={generoEnumero} alt="Gênero e Número" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={instutoSoudapaz} alt="Instuição Sou Da Paz" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={intervozaes} alt="Intervozes" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={ittc} alt="Instuto Terra, Trabalho e Cidadania" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={movimentoDosTrabalhadores} alt="Movimento dos Trabalhadores Rurais Sem Terra" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img src={plataformaBrasileiraDePolitica} alt="Plataforma Brasileira de Politica de Drogas" />
+              </Box> 
+              <Box className="makePossibleImage">
+                <img src={sistemaPolitico} alt="Sistema Politico" />
+              </Box>   
+              <Box className="makePossibleImage">
+                <img src={redeJustiça} alt="Rede de Justiça Criminal" />
+              </Box>  
+              <Box className="makePossibleImage">
+                <img src={azMina} alt="AzMina" />
+              </Box> 
+              <Box className="makePossibleImage">
+                <img src={movimentoTrasparenciaPartidaria} alt="Movimento Trabsparencia Partidaria" />
+              </Box>
+              <Box className="makePossibleImage">
+              </Box>
+              <Box className="makePossibleImage">
+              </Box> 
+              <Box className="makePossibleImage">
+              </Box>
+              <Box className="makePossibleImage">
+              </Box> 
+              <Box className="makePossibleImage">
+              </Box>
+              <Box className="makePossibleImage">
+              </Box>    
+            </Flex>
         </Box>
       </section>
     </main>
