@@ -36,7 +36,7 @@ export default function DadosForm() {
       <main className="dados">
         <section className={`dadosWrapper ${isMobile ? "responsive" : ""}`}>
           <Box className="dadosTSEData">
-            <img src="https://via.placeholder.com/150" alt="Foto de Maria Lima" />
+            <img src="https://via.placeholder.com/150" alt="Foto Candidato" />
           </Box>
           <Box className="dadosContent">
             <Heading className="dadosHeading" as="h1" size="lg">
