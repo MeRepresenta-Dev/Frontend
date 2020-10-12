@@ -44,11 +44,11 @@ export default function DadosForm() {
     <main className="dados">
       <section className={`dadosWrapper ${isMobile ? "responsive" : ""}`}>
         <Box className="dadosTSEData">
-          <img src="https://via.placeholder.com/150" alt="Foto de Maria Lima" />
+          <img src="https://via.placeholder.com/150" alt="Foto do candidato" />
         </Box>
         <Box className="dadosContent">
           <Heading className="dadosHeading" as="h1" size="lg">
-            Olá, Maria Lima!
+            Olá, [Nome do Candidato depois de logado]!
           </Heading>
           <Text>
             Obrigada por ingressar na nossa plataforma! Agora precisamos de algumas informações sobre quem você é. As questões identitárias poderão ser utilizadas pelos eleitores para filtrarem as candidaturas.
