@@ -1,29 +1,251 @@
-.pauta {
-  margin-left: 12rem;
-  margin-right: 12rem;
-}
 
-.pautaTitulo {
-  text-align: center;
-}
-
-.container {
+#TextoPautas h2{
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
-.retangulo-rosa{
-  width:40px;
-  height:8px;
-  background:#EF476F;
-  margin: 2px;
+#TextoPautas #text1{
+    font-size: 32px;
+    line-height: 39,01px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
 }
 
-.retangulo-cinza{
-  width:40px;
-  height:8px;
-  background: gray;
-  margin: 2px;
+#TextoPautas #text2{
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  transform: translateX(-305px);
+  margin-top: 50px;
+}
+
+#TextoPautas #text3{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-336px) translateY(20px);
+  
+}
+
+#TextoPautas #text4{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-170px);
+}
+
+#TextoPautas #text5{
+  font-family: "Lato";
+  font-style: normal;
+  align-items: center;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(25px) translateY(-15px);
+}
+
+#TextoPautas #text6{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 50px;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-255px);
+  color: #000000;
+}
+
+#TextoPautas #Button1{
+  position: relative;
+  left: 290px;
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+}
+#BotaoPautas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+#BotaoPautas #Button1{
+  left: -200px;
+  margin: 10px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+}
+
+#BotaoPautas #Button2{
+  left: -200px;
+  margin: 10px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+}
+
+#ContraBold{
+  margin: 5px;
+  font-weight: bold;
+  color: #000000;
+}
+
+#FavorBold{
+  margin: 5px;
+  font-weight: bold;
+  color: #000000;
+}
+
+#TextoPautas #text7{
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(10px) translateY(-15px);
+}
+
+#text7 #eduLink{
+  transform: translateX(107px) translateY(-45px);
+}
+#text7 #videoLink{
+  transform: translateX(123px) translateY(-24px);
+}
+#text7 #profLink{
+  transform: translateX(-210px) translateY(1px);
+}
+#text7 #eLink{
+  transform: translateY(-22px) translateX(-20px);
+}
+#text7 #SaberMais{
+  transform: translateX(-80px);
+}
+
+#TextoPautas #text8{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-35px);
+}
+
+#TextoPautas #text9{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-200px);
+}
+
+#TextoPautas #text10{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-330px) translateY(20px);
+}
+
+#BotaoPautas2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+#BotaoPautas2 #Button3{
+  margin: 10px;
+  left: -80px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+}
+
+#BotaoPautas2 #Button4{
+  margin: 10px;
+  left: -88px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+}
+#divColunm{
+  display: flex;
+  justify-content: center;
+  flex-direction: column !important;
+}
+#divBetween{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+
+}
+#divBetween #botaoCont {
+  margin-bottom: 80px;  
+
+  background: #1B9AAA;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  color: white;
+}
+
+#divBetween #voltarFormu{
+  margin-right:  700px;
+  margin-bottom: 80px;
+
 }
