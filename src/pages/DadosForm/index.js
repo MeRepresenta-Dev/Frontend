@@ -1,4 +1,3 @@
-// revisar esse codigo, pois nao achei a parte que coloco o popup
 
 
 
@@ -164,7 +163,9 @@ export default function DadosForm() {
                   <FormLabel htmlFor="deficiencia">Você possui alguma deficiência?</FormLabel>
                   <Stack pl={6} mt={1} spacing={1}>
                     <CheckboxArrayControl name="deficiencia" value="nao">
+                     <Radio value="simNumeroDiferente">
                       Não possuo
+                      </Radio>
                     </CheckboxArrayControl>
                     <CheckboxArrayControl name="deficiencia" value="visual">
                       Deficiência Visual
