@@ -33,6 +33,12 @@ export default function Home() {
       if (ismobile !== isMobile) setIsMobile(ismobile);
     }, false);
   }, [isMobile]);
+  
+  <button onClick={activateLasers}>  Activate Lasers
+  <a href="https://app.merepresenta.org.br/cadastro/candidato-dados" onclick="console.log('The link was clicked.'); return false">
+  Click me
+  </button>
+</a>
 
   return (
     <main>
@@ -49,7 +55,8 @@ export default function Home() {
               </Text>
             </Box>
             <Box className="heroButtons">
-              <Button>SOU CANDIDATO</Button>
+              <Button><a href="https://app.merepresenta.org.br/cadastro/candidato-dados" onclick="console.log('The link was clicked.'); return false"
+</a>SOU CANDIDATO</Button>
               <Button>Quero ser voluntária/o</Button>
               <Button>Sou eleitor/a</Button>
             </Box>
