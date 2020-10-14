@@ -1,5 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import { Form, Field } from 'react-final-form'
+import React, { useState, useEffect } from 'react';
+import { Form, Field } from 'react-final-form';
+import { useForm } from 'react-hook-form';
+
+const { register, handleSubmit, errors } = useForm();
+
+function onSubmit(data) {
+  console.log("Data submitted: ", data);
+}
 
 import {
   Box,
@@ -31,6 +38,8 @@ export default function DadosForm() {
       if (ismobile !== isMobile) setIsMobile(ismobile);
     }, false);
   }, [isMobile]);
+
+
 
   return (
       <main className="dados">
