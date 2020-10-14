@@ -1,4 +1,5 @@
 import React from "react";
+import { Redirect } from 'react-router'
 import { useHistory } from "react-router-dom";
 import { Form } from "react-final-form";
 import { Box, Button, Heading } from "@chakra-ui/core";
@@ -7,20 +8,23 @@ import "./styles.css";
 
 import InputControl from "../../components/InputControl";
 
-const onSubmit = async (values) => {
-  const response = await api.post("/login", values);
-
-  if(response.status !== 200){
-    return alert('Credenciais não válidas');
-  }
-};
-
 export default function Login() {
   const history = useHistory();
 
-  const routeChange = () => {
-    let path = `/cadastro`;
+  const routeChange = (path) => {
     history.push(path);
+  };
+
+  const onSubmit = async (values) => {
+    try{
+      const response = await api.post("/login", values);
+      if(response.status === 200){
+        return routeChange('/candidatos/dados-form');
+      }
+    }
+    catch(e){
+      alert('Credenciais inválidas, tente novamente');
+    }  
   };
 
   return (
@@ -42,7 +46,7 @@ export default function Login() {
             >
               <Box className="loginInputs">
                 <InputControl name="email" label="E-mail" />
-                <InputControl type="password" name="senha" label="Senha" />
+                <InputControl type="password" name="password" label="Senha" />
               </Box>
               <Box className="loginButtons">
                 <Button
