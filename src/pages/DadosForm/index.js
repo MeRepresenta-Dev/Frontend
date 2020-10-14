@@ -4,9 +4,6 @@ import { useForm } from 'react-hook-form';
 
 const { register, handleSubmit, errors } = useForm();
 
-function onSubmit(data) {
-  console.log("Data submitted: ", data);
-}
 
 import {
   Box,
