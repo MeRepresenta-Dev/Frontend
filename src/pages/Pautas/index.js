@@ -1,17 +1,15 @@
-import React from 'react'
+import React from "react"
+import "./styles.css"
+import {
+  Box,
+  Button,
+  Heading,
+  Flex,
+  Text
+} from '@chakra-ui/core'
 
-<<<<<<< Updated upstream
-export default function Pautas() {
-  return <h2>Pautas</h2>;
-}
-=======
-
-const CadastroPautas = (props) => {
-
-  console.log(props)
-  
-  return (
-
+const CadastroPautas = () => (
+ 
 <Box>
   <div id="TextoPautas">
           <h2 id="text1">Pautas #MeRepresenta</h2>
@@ -173,9 +171,7 @@ const CadastroPautas = (props) => {
 </div>
 
 </Box>
-
-
-)};
+ 
+);
 
 export default CadastroPautas
->>>>>>> Stashed changes

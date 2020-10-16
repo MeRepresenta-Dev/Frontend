@@ -20,6 +20,23 @@
   flex: 1;
 }
 
+.pinkButton {
+  background: #d53f8c !important;
+  color: white;
+  cursor: pointer;
+}
+
+.blueButton {
+  background: #1B9AAA !important;
+  color: white;
+  cursor: pointer;
+}
+
+.grayButton {
+  background: #d3d3d3 !important;
+  cursor: pointer;
+}
+
 .heroButtons {
   display: flex;
   flex-direction: column;

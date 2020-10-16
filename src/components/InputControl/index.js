@@ -9,7 +9,7 @@ import Error from '../ErrorInput'
 
 import { useField } from 'react-final-form'
 
-export default function InputControl({ name, label }) {
+export default function InputControl({ name, label , type, maxlength}) {
   const { input, meta } = useField(name)
   return (
     <Control name={name} my={4}>
@@ -19,6 +19,8 @@ export default function InputControl({ name, label }) {
         isInvalid={meta.error && meta.touched}
         id={name}
         placeholder={label}
+        type={type}
+        maxLength={maxlength}
       />
       <Error name={name} />
     </Control>
