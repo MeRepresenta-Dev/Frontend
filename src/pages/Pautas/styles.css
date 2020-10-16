@@ -40,10 +40,15 @@
   font-weight: normal;
   font-size: 28px;
   line-height: 34px;
-  transform: translateX(-170px);
+  transform: translateX(-10px);
 }
 
 #TextoPautas #text5{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+
   font-family: "Lato";
   font-style: normal;
   align-items: center;
@@ -51,7 +56,7 @@
   font-weight: 300;
   font-size: 20px;
   line-height: 24px;
-  transform: translateX(25px) translateY(-15px);
+  transform: translateX(-80px) translateY(-15px);
 }
 
 #TextoPautas #text6{
@@ -60,18 +65,296 @@
   font-weight: 50px;
   font-size: 20px;
   line-height: 24px;
-  transform: translateX(-255px);
+  transform: translateX(-230px);
   color: #000000;
 }
+#TextoPautas #text7{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
 
-#TextoPautas #Button1{
-  position: relative;
-  left: 290px;
-  background: #F9F9F9;
-  box-sizing: border-box;
-  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
-  border-radius: 6px;
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-80px) translateY(-15px);
 }
+
+#TextoPautas #text8{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-80px);
+}
+
+#TextoPautas #text9{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-120px);
+}
+
+#TextoPautas #text10{
+  margin-top: 40px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-330px) translateY(20px);
+}
+#TextoPautas #text11{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-336px) translateY(20px);
+}
+
+#TextoPautas #text12{
+  margin-top: 15px;
+  transform: translateX(-57px);
+}
+
+#TextoPautas #text13{
+  margin-top: 20px;
+  transform: translateX(45px);
+}
+#TextoPautas #text14{
+  margin-top: 20px;
+  transform: translateX(-5px);
+}
+#TextoPautas #text15{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-72px) translateY(-15px);
+}
+#TextoPautas #text16{
+  margin-top: -10px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-330px) translateY(20px);
+
+}
+#TextoPautas #text17{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-182px);
+
+}
+#TextoPautas #text18{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-72px) translateY(-15px);
+
+}
+#TextoPautas #text19{
+  margin-top: 20px;
+  transform: translateX(-9px);
+
+}
+#TextoPautas #text20{
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-330px) translateY(20px);
+
+}
+#TextoPautas #text21{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-45px);
+
+}
+#TextoPautas #text22{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-72px) translateY(-15px);
+
+}
+#TextoPautas #text23{
+  margin-top: 20px;
+  transform: translateX(-9px);
+
+}
+
+#TextoPautas #text24{
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-330px) translateY(20px);
+
+}
+#TextoPautas #text25{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(88px);
+
+}
+#TextoPautas #text26{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-72px) translateY(-15px);
+
+}
+#TextoPautas #text27{
+  margin-top: 20px;
+  transform: translateX(-9px);
+
+}
+#TextoPautas #text28{
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-330px) translateY(20px);
+
+}
+#TextoPautas #text29{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(20px);
+
+}
+#TextoPautas #text30{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-72px) translateY(-15px);
+
+}
+#TextoPautas #text31{
+  margin-top: 20px;
+  transform: translateX(-65px);
+
+}
+
+#TextoPautas #text32{
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  transform: translateX(-330px) translateY(20px);
+
+}
+#TextoPautas #text33{
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 34px;
+  transform: translateX(-112px);
+
+}
+#TextoPautas #text34{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 30px;
+
+  font-family: "Lato";
+  font-style: normal;
+  color: #39393A;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  transform: translateX(-72px) translateY(-15px);
+
+}
+#TextoPautas #text35{
+  margin-top: 20px;
+  transform: translateX(-7px);
+
+}
+
+
 #BotaoPautas{
   display: flex;
   justify-content: center;
@@ -79,7 +362,7 @@
   flex-direction: column; 
 }
 #BotaoPautas #Button1{
-  left: -200px;
+  left: -92px;
   margin: 10px;
 
   background: #F9F9F9;
@@ -97,7 +380,7 @@
 }
 
 #BotaoPautas #Button2{
-  left: -200px;
+  left: -100px;
   margin: 10px;
 
   background: #F9F9F9;
@@ -113,82 +396,191 @@
   line-height: 19px;
   color: #39393A;
 }
+#BotaoPautas #Button3{
+  margin: 10px;
+  left: -130px;
 
-#ContraBold{
-  margin: 5px;
-  font-weight: bold;
-  color: #000000;
-}
-
-#FavorBold{
-  margin: 5px;
-  font-weight: bold;
-  color: #000000;
-}
-
-#TextoPautas #text7{
-  display: flex;
-  flex-direction: column;
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
 
   font-family: "Lato";
   font-style: normal;
-  color: #39393A;
   font-weight: 300;
-  font-size: 20px;
-  line-height: 24px;
-  transform: translateX(10px) translateY(-15px);
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
 }
 
-#text7 #eduLink{
-  transform: translateX(107px) translateY(-45px);
-}
-#text7 #videoLink{
-  transform: translateX(123px) translateY(-24px);
-}
-#text7 #profLink{
-  transform: translateX(-210px) translateY(1px);
-}
-#text7 #eLink{
-  transform: translateY(-22px) translateX(-20px);
-}
-#text7 #SaberMais{
-  transform: translateX(-80px);
-}
+#BotaoPautas #Button4{
+  margin: 10px;
+  left: -134px;
 
-#TextoPautas #text8{
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
   font-family: "Lato";
   font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 34px;
-  transform: translateX(-35px);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
 }
 
-#TextoPautas #text9{
+#BotaoPautas #Button5{
+  margin: 10px;
+  left: -160px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
   font-family: "Lato";
   font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 34px;
-  transform: translateX(-200px);
-}
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
 
-#TextoPautas #text10{
+}
+#BotaoPautas #Button6{
+  margin: 10px;
+  left: -158px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
   font-family: "Lato";
   font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  transform: translateX(-330px) translateY(20px);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
 }
 
-#BotaoPautas2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; 
+#BotaoPautas #Button7{
+  margin: 10px;
+  left: -190px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
 }
-#BotaoPautas2 #Button3{
+#BotaoPautas #Button8{
+  margin: 10px;
+  left: -193px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
+}
+
+#BotaoPautas #Button9{
+  margin: 10px;
+  left: -190px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
+}
+
+#BotaoPautas #Button10{
+  margin: 10px;
+  left: -193px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
+}
+#BotaoPautas #Button11{
+  margin: 10px;
+  left: -190px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
+}
+
+#BotaoPautas #Button12{
+  margin: 10px;
+  left: -193px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
+}
+#BotaoPautas #Button13{
   margin: 10px;
   left: -80px;
 
@@ -204,11 +596,11 @@
   font-size: 16px;
   line-height: 19px;
   color: #39393A;
-}
 
-#BotaoPautas2 #Button4{
+}
+#BotaoPautas #Button14{
   margin: 10px;
-  left: -88px;
+  left: -83px;
 
   background: #F9F9F9;
   box-sizing: border-box;
@@ -222,7 +614,57 @@
   font-size: 16px;
   line-height: 19px;
   color: #39393A;
+
 }
+#BotaoPautas #Button15{
+  margin: 10px;
+  left: -153px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
+}
+#BotaoPautas #Button16{
+  margin: 10px;
+  left: -162px;
+
+  background: #F9F9F9;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(100, 100, 99, 0.37);
+  border-radius: 6px;
+  cursor: pointer;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39393A;
+
+}
+
+#ContraBold{
+  margin: 5px;
+  font-weight: bold;
+  color: #000000;
+}
+
+#FavorBold{
+  margin: 5px;
+  font-weight: bold;
+  color: #000000;
+}
+
 #divColunm{
   display: flex;
   justify-content: center;
