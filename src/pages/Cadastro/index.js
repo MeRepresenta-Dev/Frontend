@@ -1,6 +1,3 @@
-// revisar o codigo sabado de manha e finalizar - ana
-
-
 import React from 'react'
 import { Form, Field } from 'react-final-form'
 

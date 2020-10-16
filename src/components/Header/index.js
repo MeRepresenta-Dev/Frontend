@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from "react-router-dom";
 
 import {
   Button,
@@ -8,15 +9,26 @@ import {
 import './styles.css'
 import logo from './logotipo.png'
 
+
+
+
 const Header = props => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
+  
+
+  const history = useHistory();
+
+  const routeChange = () => {
+    history.push("/login");
+  };
+  
 
   return (
     <header className="header">
       <div className="headerWrapper">
         <div className="headerImg">
-          <a href="/"><img id="logo" src={logo} alt="Logotipo MeRepresenta" /></a>
+          <img src={logo} alt="Logotipo MeRepresenta" />
         </div>
         <Box display={{ base: "block", lg: "none" }} onClick={handleToggle}>
           <svg
@@ -41,7 +53,7 @@ const Header = props => {
                 </a>
               </li>
               <li>
-                <a href="/login">
+                <a href="#">
                   Candidata/o
                 </a>
               </li>
@@ -71,9 +83,13 @@ const Header = props => {
             display={{ sm: show, md: show ? "block" : "none", lg: "block" }}
             mt={{ base: 4, md: 0 }}
           >
-            <a href="/login" ><Button variantColor="pink" variant="solid">
+<<<<<<< Updated upstream
+            <Button variantColor="pink" variant="solid">
+=======
+            <Button onClick={routeChange} variantColor="pink" variant="solid">
+>>>>>>> Stashed changes
               Sou Candidata/o
-            </Button></a>
+            </Button>
           </Box>
         </Box>
       </div>
