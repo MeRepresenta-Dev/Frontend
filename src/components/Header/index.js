@@ -16,7 +16,7 @@ const Header = props => {
     <header className="header">
       <div className="headerWrapper">
         <div className="headerImg">
-          <img src={logo} alt="Logotipo MeRepresenta" />
+          <a href="/"><img id="logo" src={logo} alt="Logotipo MeRepresenta" /></a>
         </div>
         <Box display={{ base: "block", lg: "none" }} onClick={handleToggle}>
           <svg
@@ -41,7 +41,7 @@ const Header = props => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/login">
                   Candidata/o
                 </a>
               </li>
@@ -71,9 +71,9 @@ const Header = props => {
             display={{ sm: show, md: show ? "block" : "none", lg: "block" }}
             mt={{ base: 4, md: 0 }}
           >
-            <Button variantColor="pink" variant="solid">
+            <a href="/login" ><Button variantColor="pink" variant="solid">
               Sou Candidata/o
-            </Button>
+            </Button></a>
           </Box>
         </Box>
       </div>
