@@ -66,8 +66,8 @@ export default function Home() {
             </Box>
             <Box className="heroButtons">
               <Button className="pinkButton">SOU CANDIDATO</Button>
-              <Button className="blueButton">Quero ser voluntária/o</Button>
-              <Button className="grayButton">Sou eleitor/a</Button>
+              <Button className="blueButton">Quero ser voluntáriaos</Button>
+              <Button className="grayButton">Sou eleitor</Button>
             </Box>
           </Box>
           <Box className="heroImage">
@@ -89,7 +89,7 @@ export default function Home() {
               O #MeRepresenta é uma união de coletivos formados por mulheres, pessoas negras e LGBT+. Nosso objetivo é diminuir a distância entre eleitoras/es e candidatas/os comprometidas/os com os direitos sociais, civis e políticos da população.
             </Text>
             <Text fontSize="xl">
-              A nova plataforma #MeRepresenta Eleições 2018 foi elaborada com a participação 19 organizações da sociedade civil. Veja abaixo quem está com a gente!
+              A nova plataforma #MeRepresenta Eleições 2020 foi elaborada com a participação de 16 organizações da sociedade civil. Veja abaixo quem está com a gente!
             </Text>
           </Box>
         </Flex>
@@ -100,7 +100,7 @@ export default function Home() {
           Entenda as <span>#pautas</span> em debate
         </Heading>
         <div className={`topicsBoxes ${isMobile ? "responsive" : ""}`}>
-          <Box className="pink">
+          <Box className="pink">  
             <Text>
               #Gênero
             </Text>
@@ -120,7 +120,7 @@ export default function Home() {
           </Box>
           <Box className="yellow">
             <Text>
-              #Povos Tradicionais & Meio Ambiente
+              #Povos Tradicionais
             </Text>
           </Box>
           <Box className="image">
@@ -128,12 +128,12 @@ export default function Home() {
           </Box>
           <Box className="blue">
             <Text>
-              #Saúde, Educação e Trabalho
+              #Politicas Sociais
             </Text>
           </Box>
           <Box className="yellow">
             <Text>
-              #Migrantes
+              #Segurança Publica  
             </Text>
           </Box>
           <Box className="blue">
@@ -143,12 +143,16 @@ export default function Home() {
           </Box>
           <Box className="yellow">
             <Text>
-              #Corrupção
+              #Comunicação
             </Text>
           </Box>
           <Box className="pink">
             <Text>
-              #Segurança & Direitos Humanos
+              #Meio Ambiente
+            </Text>
+          </Box><Box className="blue">
+            <Text>
+              #Democracia
             </Text>
           </Box>
           <Box className="image">

@@ -7,25 +7,33 @@ import "./styles.css";
 
 import InputControl from "../../components/InputControl";
 
-const onSubmit = async (values) => {
-  const {codigo1, codigo2, codigo3, codigo4} = values;
-  
-  const code = `${codigo1}${codigo2}${codigo3}${codigo4}`;
-
-  const response = await api.post("/validacao", {codigo: code});
-
-  if(response.status !== 200){
-    return alert('Código inválido');
-  }
-};
-
 export default function Login() {
   const history = useHistory();
+
+  const routeChange = (path) => {
+    history.push(path);
+  };
 
   const enviarNovamente =  async () => {
     alert("enviar novamente");
   };
 
+  const onSubmit = async (values) => {
+    const {codigo1, codigo2, codigo3, codigo4} = values;
+    
+    const code = `${codigo1}${codigo2}${codigo3}${codigo4}`;
+  
+    try{
+      const response = await api.post("/validatesms", {code:code});
+      if(response.status === 200){
+        return routeChange('/candidatos/dados-form');
+      }
+    }
+    catch(e){
+      alert('Houve um problema com o código');
+    }
+  };
+  
   return (
     <main className="login">
       <section className="loginWrapper">

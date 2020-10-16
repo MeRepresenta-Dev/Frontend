@@ -90,13 +90,10 @@ const Footer = () => {
       </div>
       <div className="copyright">
         <div className="copyrightWrapper">
-          <p>Todos os direitos reservados a #MeRepresenta 2018</p>
+          <p>#Todos os direitos reservados a #MeRepresenta 2020</p>
           <div className="socialḾedia">
             <nav>
               <ul>
-                <li>
-                  <img src={whatsapp} alt="Whatsapp" />
-                </li>
                 <li>
                   <img src={youtube} alt="YouTube" />
                 </li>
