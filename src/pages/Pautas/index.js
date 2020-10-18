@@ -15,10 +15,26 @@ const pautasData = {...convertedForm};
 // const history = useHistory();
 
 
-const clickButton = (pauta, resposta) =>{
+const clickButton = (e, pauta, resposta) =>{
     pautasData[pauta] = resposta;
 
-    console.log(pautasData);
+    e.target.style.backgroundColor = 'khaki';
+
+    // console.log(e.target.id);
+
+    const id = e.target.id;
+
+    const [,number] = id.split("Button");
+
+    if(number % 2 !== 0){ //impar
+        const otherButton = document.getElementById(`Button${Number(number)+1}`);
+        otherButton.style.backgroundColor = '#F9F9F9';
+    }else{
+        const otherButton = document.getElementById(`Button${Number(number)-1}`);
+        otherButton.style.backgroundColor = '#F9F9F9';
+    }
+
+    console.log(number);
 }
 
 const continuarClick = () =>{
@@ -46,10 +62,10 @@ const CadastroPautas = () => (
           <h2 id="text6">Qual o seu posicionamento?</h2>  
 
     <div id="BotaoPautas">
-            <Button id="Button1" onClick={() => clickButton('cirugia', 'favor')}>
+            <Button className="cirurgia" id="Button1" onClick={(e) => clickButton(e,'cirugia', 'favor')}>
               Sou a<p id="FavorBold">FAVOR</p> de cirurgia genital em crianças intersexo por motivo estético
             </Button>
-            <Button id="Button2" onClick={() => clickButton('cirugia', 'contra')} >
+            <Button className="cirurgia" id="Button2" onClick={(e) => clickButton(e,'cirugia', 'contra')} >
               Sou <p id="ContraBold">CONTRA</p> cirurgia genital em crianças intersexo por motivo estético
             </Button>
     </div>
@@ -63,10 +79,10 @@ const CadastroPautas = () => (
     </h2>
           <h2 id="text6">Qual o seu posicionamento?</h2>    
     <div id="BotaoPautas">
-            <Button id="Button3" onClick={() => clickButton('genero', 'favor')} >
+            <Button id="Button3" onClick={(e) => clickButton(e,'genero', 'favor')} >
               Sou a<p id="FavorBold">FAVOR</p> da discussão de gênero e sexualidade nas escolas.
             </Button>
-            <Button id="Button4" onClick={() => clickButton('genero', 'contra')}>
+            <Button id="Button4" onClick={(e) => clickButton(e,'genero', 'contra')}>
               Sou <p id="ContraBold">CONTRA</p> a discussão de gênero e sexualidade nas escolas.
             </Button>
     </div>
