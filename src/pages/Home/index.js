@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import {
   Box,
   Button,
@@ -41,6 +42,12 @@ import azMina from './images/abglt-168px (6).png'
 import movimentoTrasparenciaPartidaria from './images/PBPD-168px (1).png'
 
 export default function Home() {
+  const history = useHistory();
+
+  const routeChange = () => {
+    history.push("/login");
+  };
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
 
   useEffect(() => {
@@ -65,7 +72,7 @@ export default function Home() {
               </Text>
             </Box>
             <Box className="heroButtons">
-              <Button className="pinkButton">SOU CANDIDATO</Button>
+              <Button onClick={routeChange} className="pinkButton">SOU CANDIDATO</Button>
               <Button className="blueButton">Quero ser voluntáriaos</Button>
               <Button className="grayButton">Sou eleitor</Button>
             </Box>
@@ -79,7 +86,8 @@ export default function Home() {
       <section className="presentation">
         <Flex wrap="wrap">
           <Box className="presentationVideo">
-            <img src={video} alt="Video" />
+            {/* <img src={video} alt="Video" /> */}
+            <iframe id="videoRep" width="560" height="400" src="https://www.youtube.com/embed/xNSkAwC5TZo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </Box>
           <Box className="presentationContent">
             <Heading as="h1" size="2xl">

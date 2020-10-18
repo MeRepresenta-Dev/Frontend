@@ -1,8 +1,6 @@
-
-
-
 import React, { useState, useEffect } from 'react'
 import { Form, Field } from 'react-final-form'
+import { useHistory } from 'react-router-dom'
 
 import {
   Box,
@@ -24,12 +22,22 @@ import validate from '../../utils/validate'
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-const onSubmit = async values => {
-  await sleep(300)
-  window.alert(JSON.stringify(values, 0, 2))
-}
+
 
 export default function DadosForm() {
+
+    const history = useHistory();
+
+    const onSubmit = async values => {
+  
+        console.log(values);
+        
+          history.push({
+          pathname: '/cadastro/candidato-pautas',
+          data: values 
+        })
+    }
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
 
   useEffect(() => {
@@ -54,7 +62,6 @@ export default function DadosForm() {
           </Text>
           <Form
             onSubmit={onSubmit}
-            validate={validate}
             render={({
               handleSubmit,
               form,

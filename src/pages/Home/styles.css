@@ -179,3 +179,6 @@
   max-height: 236px;
   max-width: 290px;
 }
+#videoRep{
+  transform: translateY(30px) translateX(-20px);
+}

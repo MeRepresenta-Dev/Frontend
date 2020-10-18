@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useHistory } from 'react-router-dom'
 import {
   Button,
   Box,
@@ -11,6 +11,13 @@ import logo from './logotipo.png'
 const Header = props => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
+
+
+  const history = useHistory();
+
+  const routeChange = () => {
+    history.push("/login");
+  };
 
   return (
     <header className="header">
@@ -56,7 +63,7 @@ const Header = props => {
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="/cadastro/candidato-pautas">
                   Pautas
                 </a>
               </li>
@@ -71,9 +78,9 @@ const Header = props => {
             display={{ sm: show, md: show ? "block" : "none", lg: "block" }}
             mt={{ base: 4, md: 0 }}
           >
-            <a href="/login" ><Button variantColor="pink" variant="solid">
+            <Button onClick={routeChange} variantColor="pink" variant="solid">
               Sou Candidata/o
-            </Button></a>
+            </Button>
           </Box>
         </Box>
       </div>
