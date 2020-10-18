@@ -3,10 +3,15 @@ import "./styles.css"
 import {
   Box,
   Button,
-  Heading,
-  Flex,
-  Text
 } from '@chakra-ui/core'
+
+const pautasData = {};
+
+const clickButton = (pauta, resposta) =>{
+    pautasData[pauta] = resposta;
+
+    console.log(pautasData);
+}
 
 const CadastroPautas = () => (
  
@@ -25,10 +30,10 @@ const CadastroPautas = () => (
           <h2 id="text6">Qual o seu posicionamento?</h2>  
 
     <div id="BotaoPautas">
-            <Button id="Button1">
+            <Button id="Button1" onClick={() => clickButton('cirugia', 'favor')}>
               Sou a<p id="FavorBold">FAVOR</p> de cirurgia genital em crianças intersexo por motivo estético
             </Button>
-            <Button id="Button2">
+            <Button id="Button2" onClick={() => clickButton('cirugia', 'contra')} >
               Sou <p id="ContraBold">CONTRA</p> cirurgia genital em crianças intersexo por motivo estético
             </Button>
     </div>
@@ -42,10 +47,10 @@ const CadastroPautas = () => (
     </h2>
           <h2 id="text6">Qual o seu posicionamento?</h2>    
     <div id="BotaoPautas">
-            <Button id="Button3">
+            <Button id="Button3" onClick={() => clickButton('genero', 'favor')} >
               Sou a<p id="FavorBold">FAVOR</p> da discussão de gênero e sexualidade nas escolas.
             </Button>
-            <Button id="Button4">
+            <Button id="Button4" onClick={() => clickButton('genero', 'contra')}>
               Sou <p id="ContraBold">CONTRA</p> a discussão de gênero e sexualidade nas escolas.
             </Button>
     </div>
