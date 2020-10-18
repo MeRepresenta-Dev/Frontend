@@ -3,6 +3,8 @@
 
 import React from 'react'
 import { Form, Field } from 'react-final-form'
+import api from '../../services/api'
+import {useHistory} from 'react-router-dom'
 
 import {
   Box,
@@ -20,12 +22,30 @@ import InputControl from '../../components/InputControl'
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
-const onSubmit = async values => {
-  await sleep(300)
-  window.alert(JSON.stringify(values, 0, 2))
-}
+
 
 export default function Cadastro() {
+
+    const history = useHistory();
+
+    const onSubmit = async values => {
+    
+        try{
+            const response = await api.post("/register  ", values);
+            if(response.status === 200){
+              return history.push({
+                     pathname: '/cadastro/candidato-verificacao',
+                    // data: values 
+              })
+            }
+          }
+          catch(e){
+            alert('Houve um erro ao enviar o formulário');
+          } 
+    
+        console.log(values)
+    }
+
   return (
       <main className="cadastro">
         <section className="cadastroWrapper">
@@ -34,7 +54,6 @@ export default function Cadastro() {
           </Heading>
           <Form
             onSubmit={onSubmit}
-            validate={validate}
             render={({
               handleSubmit,
               form,
@@ -51,15 +70,15 @@ export default function Cadastro() {
             >
               <Box className="cadastroInputs">
                 <Heading className="cadastroInputsHeading" as="h2" size="xl">Dados da candidatura</Heading>
-                <InputControl name="nomeUrna" label="Nome de urna" />
+                <InputControl name="name" label="Nome" />
                 <InputControl name="cpf" label="CPF" />
-                <InputControl name="secaoEleitoral" label="Seção Eleitoral" />
+                <InputControl name="secao" label="Seção Eleitoral" />
               </Box>
               <Box className="cadastroInputs">
                 <Heading className="cadastroInputsHeading" as="h2" size="xl">Para mantermos contato:</Heading>
-                <InputControl name="celular" label="Telefone Celular" />
+                <InputControl name="telefone" label="Telefone Celular" />
                 <span>Insira o número que será utilizado para validar seu cadastro</span>
-                <InputControl name="emailCandidato" label="E-mail" />
+                <InputControl name="email" label="E-mail" />
               </Box>
               <Box className="cadastroInputs">
                 <Heading className="cadastroInputsHeading" as="h3" size="lg">Como encontramos sua candidatura nas redes sociais?</Heading>
@@ -84,7 +103,7 @@ export default function Cadastro() {
               </Box>
               <Box className="senhaInputs">
                 <Heading className="cadastroInputsHeading" as="h2" size="xl">Cadastre uma senha para acesso futuro </Heading>
-                <PasswordInput name="senha" label="Senha" />
+                <PasswordInput name="password" label="Senha" />
                 <PasswordInput name="confirmaSenha" label="Confirme sua senha" />
               </Box>
               <Box className="cadastroInputs">

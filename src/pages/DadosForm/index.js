@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Field } from 'react-final-form'
 import { useHistory } from 'react-router-dom'
+import api from "../../services/api"
 
 import {
   Box,
@@ -29,13 +30,23 @@ export default function DadosForm() {
     const history = useHistory();
 
     const onSubmit = async values => {
+
+        // try{
+        //     const response = await api.post("/user  ", values);
+        //     if(response.status === 200){
+        //       return history.push({
+        //              pathname: '/cadastro/candidato-pautas',
+        //             // data: values 
+        //       })
+        //     }
+        //   }
+        //   catch(e){
+        //     alert('Houve um erro ao enviar o formulário');
+        //   } 
   
         console.log(values);
         
-          history.push({
-          pathname: '/cadastro/candidato-pautas',
-          data: values 
-        })
+        localStorage.setItem('@merepresenta/form', JSON.stringify(values));
     }
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
