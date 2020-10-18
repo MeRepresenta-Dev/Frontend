@@ -31,6 +31,8 @@ export default function DadosForm() {
     const onSubmit = async values => {
   
         console.log(values);
+
+        localStorage.setItem('@merepresenta/form', JSON.stringify(values));
         
           history.push({
           pathname: '/cadastro/candidato-pautas',

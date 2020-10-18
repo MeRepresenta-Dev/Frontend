@@ -1,16 +1,32 @@
 import React from "react"
+import { useHistory } from 'react-router-dom'
 import "./styles.css"
 import {
   Box,
   Button,
 } from '@chakra-ui/core'
 
-const pautasData = {};
+const formData = localStorage.getItem('@merepresenta/form');
+
+const convertedForm = JSON.parse(formData);
+
+const pautasData = {...convertedForm};
+
+// const history = useHistory();
+
 
 const clickButton = (pauta, resposta) =>{
     pautasData[pauta] = resposta;
 
     console.log(pautasData);
+}
+
+const continuarClick = () =>{
+    localStorage.setItem('@merepresenta/pautas', JSON.stringify(pautasData));
+
+    // history.push({
+    //     pathname: '/cadastro/candidato-pautas',
+    //   })
 }
 
 const CadastroPautas = () => (
@@ -170,7 +186,7 @@ const CadastroPautas = () => (
 
     <div id="divBetween">
         <a id="voltarFormu" href="/cadastro/candidato-dados">...Voltar para Formulário</a>
-        <Button id="botaoCont">Continuar</Button>
+        <Button id="botaoCont" onClick={continuarClick}>Continuar</Button>
     </div>
 
 </div>
