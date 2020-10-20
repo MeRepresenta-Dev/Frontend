@@ -31,18 +31,18 @@ export default function DadosForm() {
 
     const onSubmit = async values => {
 
-        // try{
-        //     const response = await api.post("/user  ", values);
-        //     if(response.status === 200){
-        //       return history.push({
-        //              pathname: '/cadastro/candidato-pautas',
-        //             // data: values 
-        //       })
-        //     }
-        //   }
-        //   catch(e){
-        //     alert('Houve um erro ao enviar o formulário');
-        //   } 
+        try{
+            const response = await api.post("/user", values);
+            if(response.status === 200){
+              return history.push({
+                     pathname: '/cadastro/candidato-pautas',
+                    // data: values 
+              })
+            }
+          }
+          catch(e){
+            alert('Houve um erro ao enviar o formulário');
+          } 
   
         console.log(values);
         
