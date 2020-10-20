@@ -7,8 +7,19 @@ import {
     Flex,
     Text
   } from '@chakra-ui/core'
+import { useHistory } from 'react-router-dom'
+
+
+  
 
 export default function Temas() {
+
+    const history = useHistory();
+
+    const continuarClick = () =>{
+            history.push({pathname: '/candidato/saudacao',})
+    }
+
   return (
         
         <div id="divPrincipal">
@@ -106,7 +117,7 @@ export default function Temas() {
             </div>
         
             <div id="divContinuar">
-                <Button id="ButtonContinuar" >Continuar</Button>
+                <Button onClick="continuarClick" id="ButtonContinuar" >Continuar</Button>
             </div>
         </div>
         
