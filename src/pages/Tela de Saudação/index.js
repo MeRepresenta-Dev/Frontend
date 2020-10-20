@@ -2,8 +2,18 @@ import React from 'react'
 import './styles.css'
 import { Input, Button } from "@chakra-ui/core";
 import Img from '../../components/Header/logotipo.png'
+import { useHistory } from 'react-router-dom'
+
 
 export default function Obrigado() {
+
+    const history = useHistory();
+
+    const continuarClick = () =>{
+            history.push({pathname: '/cadastro/candidato-pautas',})
+    }
+
+
   return (
 
     <div id="MasterDiv">
@@ -16,14 +26,14 @@ export default function Obrigado() {
         </div>
         <div id="textandbutton">
             <h1 id="text4">Caracteres: 0 / 1000</h1>
-            <Button id="Button1">Enviar</Button>
+            <Button id="ButtonEnviar">Enviar</Button>
         </div>
         <div id="buttonandimages">
             <div id="buttonPautas">
             <h1 id="text5">Saiba mais sobre as <a id="linkPautas" >#pautas</a></h1>
             <h2 id="text6">Se você não conseguiu se aprofundar durante o <br></br> questionário, não se preocupe. Nós temos uma página <br></br> cheia de links com todo conteúdo reunido!
             </h2>
-            <Button id="Button2">Quero ver mais</Button>
+            <Button onClick={continuarClick} id="ButtonQuero">Quero ver mais</Button>
             </div>
             <div>
                 <img src={Img}></img>

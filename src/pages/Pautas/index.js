@@ -44,11 +44,8 @@ const clickButton = (e, pauta, resposta) =>{
 
 const continuarClick = () =>{
     localStorage.setItem('@merepresenta/pautas', JSON.stringify(pautasData));
-        history.push({
-        pathname: '/cadastro/candidato-temas',
-      })
+        history.push({pathname: '/cadastro/candidato-temas',})
 }
-
 
 return(
 

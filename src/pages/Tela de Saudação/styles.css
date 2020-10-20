@@ -81,7 +81,7 @@
 
     color: #646463;
 }
-#Button1{
+#ButtonEnviar{
     background: #1B9AAA;
     box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
     border-radius: 2px;
@@ -93,7 +93,7 @@
     
     color: white;
 }
-#Button2{
+#ButtonQuero{
     background: #1B9AAA;
     border-radius: 2px;
 
