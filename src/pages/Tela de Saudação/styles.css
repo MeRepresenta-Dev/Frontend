@@ -1,0 +1,132 @@
+#MasterDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#Saudacao{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 110px;
+    line-height: 176px;
+    text-align: center;
+
+    color: #EF476F;
+}
+#text1{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+    transform: translateY(-80px);
+    color: #39393A;
+}
+#text2{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+    transform: translateY(-30px);
+
+    text-align: center;
+
+    color: #39393A;
+}
+#text3{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 36px;
+    /* identical to box height */
+    transform: translateY(-60px);
+
+    text-align: center;
+
+    color: #39393A;
+}
+#text4{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    transform: translateY(-50px);
+
+
+    color: #646463;
+}
+#text5{
+    font-family: "Lato";
+    font-style: bold;
+    font-size: 30px;
+    line-height: 29px;
+
+    color: #39393A;
+}
+#text6{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #646463;
+}
+#Button1{
+    background: #1B9AAA;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+    width: 10%;
+    margin-left: 80px;
+
+    transform: translateY(-48px);
+    
+    color: white;
+}
+#Button2{
+    background: #1B9AAA;
+    border-radius: 2px;
+
+    width: 50%;
+
+    color: white;
+}
+#divInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#inputText1{
+    transform: translateY(-50px);
+    width: 60%;
+
+}
+#textandbutton{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#buttonandimages{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#linkPautas{
+    color: #1B9AAA;;
+}
+
+
+#divAux{
+    color: white;
+}

@@ -400,7 +400,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
-    transform: translateX(-180px);
+    transform: translateX(-205px);
     margin-top: 50px;
   }
   #TextoPautas #text41{
@@ -546,7 +546,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
-    transform: translateX(-180px);
+    transform: translateX(-235px);
     margin-top: 60px;
   }
   #TextoPautas #text56{
@@ -635,7 +635,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
-    transform: translateX(-150px);
+    transform: translateX(-205px);
     margin-top: 60px;
   }
 
@@ -770,7 +770,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
-    transform: translateX(-160px);
+    transform: translateX(-250px);
     margin-top: 60px;
   
   }
@@ -860,7 +860,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 44px;
-    transform: translateX(-200px);
+    transform: translateX(-264px);
     margin-top: 60px;
   
   }
@@ -991,7 +991,24 @@
     margin-top: 20px;
     transform: translateX(-10px);
   }
-
+  #TextoPautas #text102{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    transform: translateX(-330px);
+    margin-top: 50px;
+  }
+  #TextoPautas #text103{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+    transform: translateX(-240px);
+    margin-top: 50px;
+  }
 
 #BotaoPautas{
   display: flex;

@@ -10,14 +10,15 @@ import {
 } from '@chakra-ui/core'
 
 
+export default function CadastroPautas(){
+
 const formData = localStorage.getItem('@merepresenta/form');
 
 const convertedForm = JSON.parse(formData);
 
 const pautasData = {...convertedForm};
 
-// const history = useHistory();
-
+const history = useHistory();
 
 const clickButton = (e, pauta, resposta) =>{
     pautasData[pauta] = resposta;
@@ -43,15 +44,14 @@ const clickButton = (e, pauta, resposta) =>{
 
 const continuarClick = () =>{
     localStorage.setItem('@merepresenta/pautas', JSON.stringify(pautasData));
-
-    // history.push({
-    //     pathname: '/cadastro/candidato-pautas',
-    //   })
+        history.push({
+        pathname: '/cadastro/candidato-temas',
+      })
 }
 
 
-const CadastroPautas = () => (
- 
+return(
+
 <Box>
   <div id="TextoPautas">
           <h2 id="text1">Pautas #MeRepresenta</h2>
@@ -167,7 +167,7 @@ const CadastroPautas = () => (
             </Button>
     </div>
 
-    <h2 id="text2">Raça</h2>
+    <h2 id="text102">Raça</h2>
     <h2 id="text28">Pauta 07 de 24</h2>
           <h2 id="text29">7. Ensino de história e cultura afro-brasileira em todas as escolas</h2>
           <h2 id="text30">Há 17 anos foi aprovada uma lei para o ensino obrigatório, em todas <br></br> as escolas, da história e cultura afro-brasileira (Lei 10.639/03). Mas, <br></br> ainda hoje, não se ensina a luta dos negros e as contribuições do <br></br> povo negro nas áreas social, econômica e política na história do <br></br> Brasil. O povo negro é retratado apenas como escravizado. Falta <br></br> fiscalização da aplicação da lei nas escolas e elaboração de materiais <br></br> didáticos com estes conteúdos.
@@ -478,7 +478,7 @@ const CadastroPautas = () => (
             </Button>
     </div>
 
-    <h2 id="text88">Meio Ambiente</h2>
+    <h2 id="text103">Meio Ambiente</h2>
     <h2 id="text89">Pauta 23 de 24</h2>
           <h2 id="text96">23. Cota de gênero e raça nas lideranças dos partidos</h2>
           <h2 id="text97">Os partidos políticos e sua liberdade são fundamentais à democracia.<br></br> Durante a ditadura, só podiam existir dois partidos e vários políticos <br></br>tiveram os seus mandatos cassados. Mas os partidos brasileiros <br></br> ainda são marcados pela ausência de democracia interna. As <br></br> lideranças dos partidos, por exemplo, são principalmente compostas <br></br> por homens brancos, heterossexuais, cisgêneros e ricos e não <br></br> costuma haver mecanismos internos democráticos para a sua <br></br> escolha. Mulheres ocupam apenas 25% das lideranças partidárias. A <br></br> falta de representatividade nos cargos de direção dos partidos acaba <br></br> impactando na distribuição dos recursos públicos para as campanhas, <br></br> pois são estas lideranças que definem quanto cada candidatura deve <br></br>  receber. Mulheres negras, por exemplo, são 28% da população <br></br> brasileira, 12,9% das candidatas a deputado federal, mas receberam <br></br> apenas 5,7% dos recursos públicos de campanha e foram apenas <br></br>  2,5% dos eleitos. Também é importante que os partidos invistam em <br></br> espaços de articulação política de grupos minorizados dentro dos <br></br> partidos, como os setoriais de mulheres, pessoas negras e LGBT+. <br></br> Enquanto 76% dos partidos têm setoriais de mulheres, apenas 42% <br></br> tem setoriais negras e 33% de LGBT+.  
@@ -519,13 +519,13 @@ const CadastroPautas = () => (
 
     <div id="divBetween">
         <a id="voltarFormu" href="/cadastro/candidato-dados">...Voltar para Formulário</a>
-        <Button id="botaoCont">Continuar</Button>
+        <Button onClick={continuarClick} id="botaoCont">Continuar</Button>
     </div>
 
-</div>
+    </div>
 
-</Box>
+    </Box>
  
-);
+    );
+}
 
-export default CadastroPautas
