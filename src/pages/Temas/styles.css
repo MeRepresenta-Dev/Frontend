@@ -1,0 +1,152 @@
+#divPrincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#divAux1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#divAux2{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 500px 500px;
+    align-items: center;
+
+    transform: translateX(125px);
+}
+#divGenero{
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+    width: 50%;
+
+}
+#textPrincipal{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    
+    color: #000000;
+}
+#textAux1{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 25px;
+
+    color: #39393A;
+
+    transform: translateX(250px);
+
+}
+#textAux2{
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #39393A;
+}
+#textTemas{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+#spanAux1{
+    color: #EF476F;
+}
+#divContinuar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+#ButtonContinuar{
+    background: #1B9AAA;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+    margin: 10px;
+
+    color: white;
+}
+#ButtonN1{
+    background: #1B9AAA;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+    color: white;
+    margin: 5px;
+}
+#ButtonN2{
+    background: #1B9AAA;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+    color: white;
+    margin: 5px;
+}
+#ButtonN3{
+    background: #1B9AAA;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+    color: white;
+    margin: 5px;
+}
+#ButtonN4{
+    background: #1B9AAA;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+
+    color: white;
+    margin: 5px;
+}
+#ButtonN5{
+    background: #1B9AAA;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px; 
+
+    color: white;
+    margin: 5px;
+    
+}
+#ButtonN1:focus{
+    background: white;
+    color: #000000;
+}
+#ButtonN2:focus{
+    background: white;
+    color: black;
+}
+#ButtonN3:focus{
+    background: white;
+    color: black;
+}
+#ButtonN4:focus{
+    background: white;
+    color: black;
+}
+#ButtonN5:focus{
+    background: white;
+    color: black;
+}
