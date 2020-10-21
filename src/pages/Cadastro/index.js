@@ -31,7 +31,7 @@ export default function Cadastro() {
     const onSubmit = async values => {
     
         try{
-            const response = await api.post("/register  ", values);
+            const response = await api.post("/register", values);
             if(response.status === 200){
               return history.push({
                      pathname: '/cadastro/candidato-verificacao',
