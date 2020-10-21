@@ -18,6 +18,8 @@ const convertedForm = JSON.parse(formData);
 
 const pautasData = {...convertedForm};
 
+localStorage.setItem('@merepresenta/pautas', JSON.stringify(pautasData));
+
 const history = useHistory();
 
 const clickButton = (e, pauta, resposta) =>{
@@ -31,7 +33,7 @@ const clickButton = (e, pauta, resposta) =>{
 
     const [,number] = id.split("Button");
 
-    if(number % 2 !== 0){ //impar
+    if(number % 5 !== 0){ //impar
         const otherButton = document.getElementById(`Button${Number(number)+1}`);
         otherButton.style.backgroundColor = '#F9F9F9';
     }else{
@@ -43,7 +45,7 @@ const clickButton = (e, pauta, resposta) =>{
 }
 
 const continuarClick = () =>{
-    localStorage.setItem('@merepresenta/pautas', JSON.stringify(pautasData));
+        localStorage.setItem('@merepresenta/pautas', JSON.stringify(pautasData));
         history.push({pathname: '/cadastro/candidato-temas',})
 }
 
@@ -52,7 +54,6 @@ return(
 <Box>
   <div id="TextoPautas">
           <h2 id="text1">Pautas #MeRepresenta</h2>
-
           <h2 id="text2">#LGBT+</h2>
           <h2 id="text3">Pauta 01 de 24</h2>
           <h2 id="text4">1. Cirurgia genital em crianças intersexo por motivo estético</h2>
