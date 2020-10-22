@@ -89,12 +89,13 @@ export default function DadosForm() {
               shadow="1px 1px 3px rgba(0,0,0,0.3)"
               onSubmit={handleSubmit}
             >
+                <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Field
                   name="identidadeGenero"
                   component={AdaptedRadioGroup}
-                  label="Como você se identifica?"
-                >
+                  label="Como você se identifica?">
+                    <div id="espaço"></div>
                   <Radio value="mulherCis">
                     Mulher cis
                   </Radio>
@@ -115,12 +116,13 @@ export default function DadosForm() {
                   </Radio>
                 </Field>
               </Box>
+              <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Field
                   name="orientacaoSexualAfetiva"
                   component={AdaptedRadioGroup}
-                  label="Qual sua orientação afetiva e/ou sexual?"
-                >
+                  label="Qual sua orientação afetiva e/ou sexual?">
+                    <div id="espaço"></div>
                   <Radio value="hetero">
                     Hétero
                   </Radio>
@@ -138,12 +140,13 @@ export default function DadosForm() {
                   </Radio>
                 </Field>
               </Box>
+              <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Field
                   name="corRaca"
                   component={AdaptedRadioGroup}
-                  label="Qual sua cor ou raça?"
-                >
+                  label="Qual sua cor ou raça?">
+                    <div id="espaço"></div>
                   <Radio value="branca">
                     Branca
                   </Radio>
@@ -161,12 +164,13 @@ export default function DadosForm() {
                   </Radio>
                 </Field>
               </Box>
+              <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Field
                   name="candidaturaColetiva"
                   component={AdaptedRadioGroup}
-                  label="Você faz parte de uma Candidatura Coletiva?"
-                >
+                  label="Você faz parte de uma Candidatura Coletiva?">
+                    <div id="espaço"></div>
                   <Radio value="nao">
                     Não faço parte
                   </Radio>
@@ -178,6 +182,7 @@ export default function DadosForm() {
                   </Radio>
                 </Field>
               </Box>
+              <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Control name="deficiencia" my={4}>
                   <FormLabel htmlFor="deficiencia">Você possui alguma deficiência?</FormLabel>

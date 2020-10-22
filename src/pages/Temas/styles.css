@@ -130,23 +130,3 @@
     margin: 5px;
     
 }
-#ButtonN1:focus{
-    background: white;
-    color: #000000;
-}
-#ButtonN2:focus{
-    background: white;
-    color: black;
-}
-#ButtonN3:focus{
-    background: white;
-    color: black;
-}
-#ButtonN4:focus{
-    background: white;
-    color: black;
-}
-#ButtonN5:focus{
-    background: white;
-    color: black;
-}

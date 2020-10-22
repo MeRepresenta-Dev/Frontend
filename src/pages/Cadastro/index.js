@@ -73,13 +73,13 @@ export default function Cadastro() {
             >
               <Box className="cadastroInputs">
                 <Heading className="cadastroInputsHeading" as="h2" size="xl">Dados da candidatura</Heading>
-                <InputControl name="name" label="Nome" />
+                <InputControl name="name" label="Nome de Urna" />
                 <InputControl name="cpf" label="CPF" />
-                <InputControl name="secao" label="Seção Eleitoral" />
+                <InputControl name="secao" label="Seção Eleitoral - Localizado no título de eleitor a seção eleitoral é composta por uma sequência de 4 dígitos" />
               </Box>
               <Box className="cadastroInputs">
                 <Heading className="cadastroInputsHeading" as="h2" size="xl">Para mantermos contato:</Heading>
-                <InputControl name="telefone" label="Telefone Celular" />
+                <InputControl name="telefone" label="Telefone com DDD " />
                 <span>Insira o número que será utilizado para validar seu cadastro</span>
                 <InputControl name="email" label="E-mail" />
               </Box>

@@ -11,9 +11,9 @@ import InputControl from "../../components/InputControl";
 export default function Login() {
   const history = useHistory();
 
-  const routeChange = (path = '/cadastro/candidato') => {
+  const routeChange = () => {
     // history.push(path);
-    history.push({ pathname: path })
+    history.push({ pathname:  '/cadastro/candidato' })
   };
 
   const onSubmit = async (values) => {

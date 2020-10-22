@@ -8,6 +8,11 @@ import "./styles.css";
 import InputControl from "../../components/InputControl";
 
 export default function Login() {
+
+   const dadosFormulario = localStorage.getItem('@merepresenta/dadosForm');
+
+   const convertedForm = JSON.parse(dadosFormulario);
+
   const history = useHistory();
 
   const routeChange = (path) => {
@@ -40,7 +45,7 @@ export default function Login() {
         <Heading className="loginHeading" as="h1" size="1xl">
           Digite o código recebido
         </Heading>
-        <p id="frase" >Enviamos um SMS de verificação para <strong> {}. </strong> Insira o código de verificação recebido. </p>
+        <p id="frase" >Enviamos um SMS de verificação para <strong> {convertedForm.telefone}. </strong> Insira o código de verificação recebido. </p>
         <Form
           onSubmit={onSubmit}
           render={({ handleSubmit, form, errors, submitting }) => (

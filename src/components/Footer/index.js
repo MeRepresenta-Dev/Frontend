@@ -14,6 +14,7 @@ import omidyar from "./icons/omidyar.png";
 import mattos from "./icons/mattos-filho-veiga-filho-marrey-jr-e-quiroga-advogados-original.png";
 import dataLabel from "./icons/data-lavel.png";
 import silveira from "./icons/silveira_andrade.png";
+import logoInsta from './icons/logoinsta.png'
 
 import "./styles.css";
 
@@ -94,11 +95,20 @@ const Footer = () => {
           <div className="socialḾedia">
             <nav>
               <ul>
-                <li>
+                <li><a target="_blank" href="https://www.youtube.com/channel/UCKNpPOIOdhY5gI42fuVVr_g">
                   <img src={youtube} alt="YouTube" />
+                  </a>
                 </li>
                 <li>
+                    <a target="_blank" href="https://www.instagram.com/me_representaa/?hl=pt-br">
+                  <img id="logoinstastyle" src={logoInsta} alt="Instagram" />
+                  </a>
+                </li>
+                
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/merepresenta.org.br">
                   <img src={facebook} alt="Facebook" />
+                  </a>
                 </li>
                 <li>
                   <a href="#">Contato</a>

@@ -182,3 +182,11 @@
 #videoRep{
   transform: translateY(30px) translateX(-20px);
 }
+#mobabot{
+    width: 40%;
+    height: 80px;
+    transform: translateX(20px) translateY(60px);
+}
+#mdt{
+    margin: 20px;
+}

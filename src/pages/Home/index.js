@@ -40,6 +40,8 @@ import sistemaPolitico from './images/abglt-168px (4).png'
 import redeJustiça from './images/abglt-168px (5).png'
 import azMina from './images/abglt-168px (6).png'
 import movimentoTrasparenciaPartidaria from './images/PBPD-168px (1).png'
+import mulheresnegrasdecidem from './images/vote_geral (1).png'
+import moba from './images/WhatsApp_Image_2020-10-21_at_21.01.40-removebg-preview (1).png'
 
 export default function Home() {
   const history = useHistory();
@@ -73,8 +75,8 @@ export default function Home() {
             </Box>
             <Box className="heroButtons">
               <Button onClick={routeChange} className="pinkButton">SOU CANDIDATO</Button>
-              <Button className="blueButton">Quero ser voluntáriaos</Button>
-              <Button className="grayButton">Sou eleitor</Button>
+              <Button className="blueButton">QUERO SER VOLUNTÁRIA/O</Button>
+              <Button className="grayButton">SOU ELEITOR/A</Button>
             </Box>
           </Box>
           <Box className="heroImage">
@@ -115,7 +117,7 @@ export default function Home() {
           </Box>
           <Box className="blue">
             <Text>
-              #LGBT
+              #LGBT+
             </Text>
           </Box>
           <Box className="image">
@@ -136,12 +138,12 @@ export default function Home() {
           </Box>
           <Box className="blue">
             <Text>
-              #Politicas Sociais
+              #Políticas Sociais
             </Text>
           </Box>
           <Box className="yellow">
             <Text>
-              #Segurança Publica  
+              #Segurança Pública  
             </Text>
           </Box>
           <Box className="blue">
@@ -156,11 +158,11 @@ export default function Home() {
           </Box>
           <Box className="pink">
             <Text>
-              #Meio Ambiente
+              #Democracia
             </Text>
           </Box><Box className="blue">
             <Text>
-              #Democracia
+              #Meio Ambiente
             </Text>
           </Box>
           <Box className="image">
@@ -181,7 +183,7 @@ export default function Home() {
               </Heading>
               <Box className="joinButtons">
                 <Button className="blueButton">QUERO SER VOLUNTÁRIA/O</Button>
-                <Button className="grayButton">Quero saber mais</Button>
+                <Button className="grayButton">QUERO SABER MAIS</Button>
               </Box>
             </Box>
           </Box>
@@ -194,6 +196,9 @@ export default function Home() {
             <span>Quem</span> fez isso possível?
           </Heading>
           <Flex wrap="wrap" justifyContent="space-between">
+          <Box className="makePossibleImage">
+              <img src={mulheresnegrasdecidem} alt="Mulheres Negras Decidem" />
+            </Box>
             <Box className="makePossibleImage">
               <img src={blogueirasNegras} alt="Blogueiras Negras" />
             </Box>
@@ -202,7 +207,7 @@ export default function Home() {
             </Box>
             <Box className="makePossibleImage">
               <img src={cidadaniaInteligente} alt="Cidadania Inteligente" />
-            </Box>
+            </Box>   
             <Box className="makePossibleImage">
               <img src={voteLGBT} alt="Vote LGBT" />
             </Box>
@@ -214,49 +219,52 @@ export default function Home() {
           </Heading>
           <Flex wrap="wrap" justifyContent="space-between">
               <Box className="makePossibleImage">
-                <img src={abglt} alt="ABGLT" />
+                <img src={abglt} alt="ABGLT"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={aliancaLGBT} alt="Aliança LGTB+" />
+                <img src={aliancaLGBT} alt="Aliança LGTB+"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={apoinme} alt="apoinme" />
+                <img src={apoinme} alt="apoinme"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={cfemea} alt="cfemea" />
+                <img src={cfemea} alt="cfemea"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={conaq} alt="Conaq" />
+                <img src={conaq} alt="Conaq"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={generoEnumero} alt="Gênero e Número" />
+                <img src={generoEnumero} alt="Gênero e Número"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={instutoSoudapaz} alt="Instuição Sou Da Paz" />
+                <img id="mdt" src={instutoSoudapaz} alt="Instuição Sou Da Paz"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={intervozaes} alt="Intervozes" />
+                <img id="mdt" src={intervozaes} alt="Intervozes"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={ittc} alt="Instuto Terra, Trabalho e Cidadania" />
+                <img id="mdt" src={ittc} alt="Instuto Terra, Trabalho e Cidadania"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={movimentoDosTrabalhadores} alt="Movimento dos Trabalhadores Rurais Sem Terra" />
+                <img id="mdt" src={movimentoDosTrabalhadores} alt="Movimento dos Trabalhadores Rurais Sem Terra"/>
               </Box>
               <Box className="makePossibleImage">
-                <img src={plataformaBrasileiraDePolitica} alt="Plataforma Brasileira de Politica de Drogas" />
+                <img id="mdt" src={plataformaBrasileiraDePolitica} alt="Plataforma Brasileira de Politica de Drogas"/>
               </Box> 
               <Box className="makePossibleImage">
-                <img src={sistemaPolitico} alt="Sistema Politico" />
+                <img id="mdt" src={sistemaPolitico} alt="Sistema Politico"/>
               </Box>   
               <Box className="makePossibleImage">
-                <img src={redeJustiça} alt="Rede de Justiça Criminal" />
+                <img id="mdt" src={redeJustiça} alt="Rede de Justiça Criminal"/>
               </Box>  
               <Box className="makePossibleImage">
-                <img src={azMina} alt="AzMina" />
+                <img id="mdt" src={azMina} alt="AzMina"/>
               </Box> 
               <Box className="makePossibleImage">
-                <img src={movimentoTrasparenciaPartidaria} alt="Movimento Trabsparencia Partidaria" />
+                <img id="mdt" src={movimentoTrasparenciaPartidaria} alt="Movimento Trabsparencia Partidaria" />
+              </Box>
+              <Box className="makePossibleImage">
+                <img id="mobabot" src={moba} alt="Monabot"/>
               </Box>
               <Box className="makePossibleImage">
               </Box>

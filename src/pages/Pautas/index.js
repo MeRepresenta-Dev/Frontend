@@ -109,7 +109,7 @@ return(
     </div>
 
 
-    <h2 id="text2">Gênero</h2>
+    <h2 id="text2">#Gênero</h2>
     <h2 id="text16">Pauta 04 de 24</h2>
           <h2 id="text17">4. Aborto legal e seguro no SUS</h2>
           <h2 id="text18">O aborto é um direito de qualquer pessoa gestante no Brasil, desde <br></br> 1940, quando a sua vida está em risco com a gravidez ou quando ela <br></br> é resultado de um estupro e, desde 2012, também é possível quando <br></br> o feto não tiver um cérebro formado. Nestes casos, não é preciso <br></br> realizar Boletim de Ocorrência, nem ter autorização da justiça. <br></br> Qualquer hospital do SUS que tenha serviço de ginecologia e <br></br> obstetrícia deveria realizar o aborto legal e seguro. Mas este direito <br></br> não está sendo garantido no SUS - dos 126 hospitais de referência no <br></br> país, apenas 42 estão realizando o serviço em 2020.
@@ -165,7 +165,7 @@ return(
             </Button>
     </div>
 
-    <h2 id="text102">Raça</h2>
+    <h2 id="text102">#Raça</h2>
     <h2 id="text28">Pauta 07 de 24</h2>
           <h2 id="text29">7. Ensino de história e cultura afro-brasileira em todas as escolas</h2>
           <h2 id="text30">Há 17 anos foi aprovada uma lei para o ensino obrigatório, em todas <br></br> as escolas, da história e cultura afro-brasileira (Lei 10.639/03). Mas, <br></br> ainda hoje, não se ensina a luta dos negros e as contribuições do <br></br> povo negro nas áreas social, econômica e política na história do <br></br> Brasil. O povo negro é retratado apenas como escravizado. Falta <br></br> fiscalização da aplicação da lei nas escolas e elaboração de materiais <br></br> didáticos com estes conteúdos.
@@ -220,7 +220,7 @@ return(
             </Button>
     </div>
 
-    <h2 id="text40">Povos Tradicionais</h2>
+    <h2 id="text40">]#Povos Tradicionais</h2>
     <h2 id="text41">Pauta 10 de 24</h2>
           <h2 id="text42">10.Políticas emergenciais de combate à pandemia nas <br></br> comunidades quilombolas</h2>
           <h2 id="text43">No Brasil, há 16 milhões de quilombolas, distribuídos em 6.300 <br></br>comunidades remanescentes de territórios em que houve resistência <br></br> negra à escravização. A Constituição de 1988 garantiu o direito dos <br></br> quilombolas à propriedade de suas terras, mas, até hoje, apenas <br></br> 5,34% dos territórios quilombolas conseguiu. O atual presidente <br></br> afirmou em campanha que não investiria nenhum centavo em <br></br> indígenas e quilombolas e derrubou uma série de medidas destinadas <br></br> à saúde de povos indígenas, quilombolas e demais comunidades <br></br> tradicionais durante a pandemia, que havia sido aprovada pelo <br></br> Congresso Nacional. A população quilombola tem morrido 120% mais <br></br> de COVID-19 do que a média da população brasileira. Por isso, a <br></br> Coordenação Nacional de Articulação das Comunidades Negras <br></br> Rurais Quilombolas – CONAQ recorreu ao Supremo Tribunal Federal <br></br> para que o Estado brasileiro tome ações emergenciais de combate à <br></br> pandemia nas comunidades quilombolas (ADPF 742/2020).
@@ -283,7 +283,7 @@ return(
     </div>
 
 
-    <h2 id="text55">Políticas Sociais</h2>
+    <h2 id="text55">#Políticas Sociais</h2>
     <h2 id="text56">Pauta 13 de 24</h2>
           <h2 id="text57">13. Renda básica permanente mantendo os programas <br></br> sociais existentes</h2>
           <h2 id="text58">Com a pandemia, após muita pressão da sociedade e da oposição ao <br></br>governo, foi aprovado o auxílio emergencial no valor de 600 reais, <br></br> que alcançou mais de 53 milhões de brasileiros. Com a popularidade <br></br> que a medida trouxe ao governo, este passou a defender a ideia de <br></br> uma renda básica permanente. Esta é uma ideia antiga que pode <br></br> garantir que famílias mais vulneráveis possam ter acesso a direitos <br></br> básicos e melhorar os índices de pobreza no Brasil, reduzindo <br></br> desigualdades sociais, econômicas, tributárias e os impactos da <br></br> instabilidade do mercado de trabalho. Mas a proposta do governo de <br></br> implementar a renda básica permanente quer eliminar ou reduzir <br></br> ainda mais a verba de outros programas sociais como o SUS, <br></br> educação pública gratuita e agricultura familiar.
@@ -321,7 +321,7 @@ return(
     </div>
 
 
-    <h2 id="text64">Segurança Pública</h2>
+    <h2 id="text64">#Segurança Pública</h2>
     <h2 id="text65">Pauta 15 de 24</h2>
           <h2 id="text66">15. Guardas Civis Municipais andarem armadas</h2>
           <h2 id="text67">A atuação da Guardas Civis Municipais de várias cidades tem se <br></br> tornado cada vez mais parecida (e até mesmo realizada em conjunto) <br></br> com a Polícia Militar. Enquanto o papel da Polícia Militar é o <br></br> de garantir a segurança pública, o das Guardas Civis era apenas o de <br></br> proteger o patrimônio público da cidade e cada município pode <br></br> escolher ter uma Guarda ou não. Mas em 2014, uma lei aumentou o <br></br> papel das Guardas, prevendo o patrulhamento preventivo e o uso <br></br> progressivo da força (Lei 13.022/2014). A partir daí, muitas Guardas <br></br> passaram a atuar de modo muito semelhante à Polícia Militar: <br></br> trabalhando armadas, realizando patrulhamento ostensivo, <br></br> abordagens seletivas, apreensões e prisões. Isso é um problema, <br></br> porque a Polícia Militar é a que mais mata jovens negros e periféricos. <br></br> Só durante a pandemia as mortes por policiais aumentaram 31%.
@@ -360,7 +360,7 @@ return(
     </div>
 
 
-    <h2 id="text2">Drogas</h2>
+    <h2 id="text2">#Drogas</h2>
     <h2 id="text65">Pauta 17 de 24</h2>
           <h2 id="text73">17. Descriminalizar o comércio de drogas para reduzir a <br></br> quantidade de mulheres e jovens negros presos</h2>
           <h2 id="text74">O Brasil tem a terceira maior população carcerária do mundo, com <br></br> mais de 700 mil pessoas presas. As cadeias estão superlotadas, <br></br> trabalhando em média 70% acima da sua capacidade. E um dos <br></br> motivos é a política de “guerra às drogas”. Em 2006, aprovamos a Lei <br></br> de Drogas, uma das principais responsáveis pelo aumento do número <br></br> de presos no país (Lei 11.343/2016). Hoje não é crime ser usuário de <br></br> drogas, mas crime comercializar drogas. O problema é que a lei não <br></br> traz critérios para diferenciar um do outro. Ou seja, é mais provável <br></br> que um usuário, negro, pobre e periférico seja preso por tráfico do <br></br> que tratado como alguém que precisa de atendimento na saúde <br></br> pública. Drogas é a segunda maior causa de prisão dos homens e é a <br></br> maior causa de prisão de mulheres (metade delas está presa por <br></br> comércio de drogas). Pessoas negras são 56% da população <br></br> brasileira, mas são 70% da população  das prisões. Jovens, de 18 a <br></br> 29 anos, são 18% da população brasileira, mas 44% dos presos. <br></br> Além do encarceramento, a “guerra às drogas” também provoca <br></br> maior violência policial, mortes por homicídio e afasta os usuários de <br></br> drogas de buscar atendimento na saúde pública.  
@@ -402,7 +402,7 @@ return(
 
 
     
-    <h2 id="text79">Comunicação</h2>
+    <h2 id="text79">#Comunicação</h2>
     <h2 id="text80">Pauta 19 de 24</h2>
           <h2 id="text81">19. Acesso gratuito à internet nas periferias, comunidades <br></br> indígenas e quilombolas</h2>
           <h2 id="text82">Na média nacional, 28% dos domicílios brasileiros ainda não tem <br></br>acesso à internet. Na área rural, esse número sobre para 48%. <br></br> Enquanto 99% dos domicílios da classe A estão conectados, nas <br></br> classes D e E, 50% dos domicílios não possuem conexão. O Marco <br></br> Civil da Internet reconhece que o acesso à internet é essencial para o <br></br> exercício da cidadania (Lei n° 12.965/2014), mas a exclusão digital <br></br> afeta muito mais a população pobre, periférica, quilombola e <br></br> indígenas. Apenas 48% da população indígena e 55% das pessoas <br></br> negras já utilizou um computador pelo menos uma vez na vida.   
@@ -439,7 +439,7 @@ return(
             </Button>
     </div>
 
-    <h2 id="text88">Democracia</h2>
+    <h2 id="text88">#Democracia</h2>
     <h2 id="text89">Pauta 21 de 24</h2>
           <h2 id="text90">21. Cota de gênero e raça nas lideranças dos partidos</h2>
           <h2 id="text91">Os partidos políticos e sua liberdade são fundamentais à democracia.<br></br> Durante a ditadura, só podiam existir dois partidos e vários políticos <br></br>tiveram os seus mandatos cassados. Mas os partidos brasileiros <br></br> ainda são marcados pela ausência de democracia interna. As <br></br> lideranças dos partidos, por exemplo, são principalmente compostas <br></br> por homens brancos, heterossexuais, cisgêneros e ricos e não <br></br> costuma haver mecanismos internos democráticos para a sua <br></br> escolha. Mulheres ocupam apenas 25% das lideranças partidárias. A <br></br> falta de representatividade nos cargos de direção dos partidos acaba <br></br> impactando na distribuição dos recursos públicos para as campanhas, <br></br> pois são estas lideranças que definem quanto cada candidatura deve <br></br>  receber. Mulheres negras, por exemplo, são 28% da população <br></br> brasileira, 12,9% das candidatas a deputado federal, mas receberam <br></br> apenas 5,7% dos recursos públicos de campanha e foram apenas <br></br>  2,5% dos eleitos. Também é importante que os partidos invistam em <br></br> espaços de articulação política de grupos minorizados dentro dos <br></br> partidos, como os setoriais de mulheres, pessoas negras e LGBT+. <br></br> Enquanto 76% dos partidos têm setoriais de mulheres, apenas 42% <br></br> tem setoriais negras e 33% de LGBT+.  
@@ -476,7 +476,7 @@ return(
             </Button>
     </div>
 
-    <h2 id="text103">Meio Ambiente</h2>
+    <h2 id="text103">#Meio Ambiente</h2>
     <h2 id="text89">Pauta 23 de 24</h2>
           <h2 id="text96">23. Cota de gênero e raça nas lideranças dos partidos</h2>
           <h2 id="text97">Os partidos políticos e sua liberdade são fundamentais à democracia.<br></br> Durante a ditadura, só podiam existir dois partidos e vários políticos <br></br>tiveram os seus mandatos cassados. Mas os partidos brasileiros <br></br> ainda são marcados pela ausência de democracia interna. As <br></br> lideranças dos partidos, por exemplo, são principalmente compostas <br></br> por homens brancos, heterossexuais, cisgêneros e ricos e não <br></br> costuma haver mecanismos internos democráticos para a sua <br></br> escolha. Mulheres ocupam apenas 25% das lideranças partidárias. A <br></br> falta de representatividade nos cargos de direção dos partidos acaba <br></br> impactando na distribuição dos recursos públicos para as campanhas, <br></br> pois são estas lideranças que definem quanto cada candidatura deve <br></br>  receber. Mulheres negras, por exemplo, são 28% da população <br></br> brasileira, 12,9% das candidatas a deputado federal, mas receberam <br></br> apenas 5,7% dos recursos públicos de campanha e foram apenas <br></br>  2,5% dos eleitos. Também é importante que os partidos invistam em <br></br> espaços de articulação política de grupos minorizados dentro dos <br></br> partidos, como os setoriais de mulheres, pessoas negras e LGBT+. <br></br> Enquanto 76% dos partidos têm setoriais de mulheres, apenas 42% <br></br> tem setoriais negras e 33% de LGBT+.  

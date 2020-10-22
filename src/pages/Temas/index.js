@@ -23,64 +23,20 @@ const history = useHistory();
 
 const clickButton = (e, tema, resposta) =>{
     temasData[tema] = resposta;
+    const botoes1 = e.target.className;
+    const [classeBotoes] = botoes1.split(" ")
+    const botoesTemas = document.getElementsByClassName(classeBotoes)
 
-    const botoes1 = document.getElementsByClassName("botoesPontos1");
-    // const botoes2 = document.getElementsByClassName("botoesPontos2");
-    // const botoes3 = document.getElementsByClassName("botoesPontos3");
-    // const botoes4 = document.getElementsByClassName("botoesPontos4");
-    // const botoes5 = document.getElementsByClassName("botoesPontos5");
-    // const botoes6 = document.getElementsByClassName("botoesPontos6");
-    // const botoes7 = document.getElementsByClassName("botoesPontos7");
-    // const botoes8 = document.getElementsByClassName("botoesPontos8");
-    // const botoes9 = document.getElementsByClassName("botoesPontos9");
-    // const botoes10 = document.getElementsByClassName("botoesPontos10");
-
-    // console.log(botoes);
-
-    for(let i=0; i < botoes1.length; i++){
-        botoes1[i].style.backgroundColor = '#1B9AAA';
-        botoes1[i].style.Color = 'white';
+    for(let i=0; i < botoesTemas.length; i++){
+        botoesTemas[i].style.backgroundColor = '#1B9AAA';
+        botoesTemas[i].style.color = 'white';
     }
-    // for(let i=0; i < botoes2.length; i++){
-    //     botoes2[i].style.backgroundColor = '#1B9AAA';
-    //     botoes2[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes3.length; i++){
-    //     botoes3[i].style.backgroundColor = '#1B9AAA';
-    //     botoes3[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes4.length; i++){
-    //     botoes4[i].style.backgroundColor = '#1B9AAA';
-    //     botoes4[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes5.length; i++){
-    //     botoes5[i].style.backgroundColor = '#1B9AAA';
-    //     botoes5[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes6.length; i++){
-    //     botoes6[i].style.backgroundColor = '#1B9AAA';
-    //     botoes6[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes7.length; i++){
-    //     botoes7[i].style.backgroundColor = '#1B9AAA';
-    //     botoes7[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes8.length; i++){
-    //     botoes8[i].style.backgroundColor = '#1B9AAA';
-    //     botoes8[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes9.length; i++){
-    //     botoes9[i].style.backgroundColor = '#1B9AAA';
-    //     botoes9[i].style.Color = 'white';
-    // }
-    // for(let i=0; i < botoes10.length; i++){
-    //     botoes10[i].style.backgroundColor = '#1B9AAA';
-    //     botoes10[i].style.Color = 'white';
-    // }
 
+    console.log(classeBotoes)
+
+    console.log(e.target.value)
     e.target.style.backgroundColor = 'white';
-    e.target.style.Color = 'black';
-
+    e.target.style.color = 'black';
 
 }
 
@@ -112,7 +68,7 @@ const irParaSaudacao  = async () =>{
             <div id="divAux2">    
                 <div id="divGenero" >
                     <h2 id="textTemas">#Genero</h2>
-                <Button className="botoesPontos1" onClick={(e) => clickButton(e,'genero', '1')} id="ButtonN1">1</Button>
+                <Button value="1" className="botoesPontos1" onClick={(e) => clickButton(e,'genero', '1')} id="ButtonN1">1</Button>
                 <Button className="botoesPontos1" onClick={(e) => clickButton(e,'genero', '2')} id="ButtonN2">2</Button>
                 <Button className="botoesPontos1" onClick={(e) => clickButton(e,'genero', '3')} id="ButtonN3">3</Button>
                 <Button className="botoesPontos1" onClick={(e) => clickButton(e,'genero', '4')} id="ButtonN4">4</Button>
