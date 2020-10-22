@@ -5,6 +5,7 @@ import React from 'react'
 import { Form, Field } from 'react-final-form'
 import api from '../../services/api'
 import {useHistory} from 'react-router-dom'
+import Modal from '../../components/Modal/index.js'
 
 import {
   Box,
@@ -27,11 +28,14 @@ export default function Cadastro() {
     const history = useHistory();
 
     const onSubmit = async values => {
+
       const formattedValues = {
         ...values,
         telefone: parseInt(values.telefone, 10),
         secao: parseInt(values.secao, 10),
       }
+
+       localStorage.setItem('@merepresenta/cadastro', JSON.stringify(values));
       
       try{
           const response = await api.post("/register", formattedValues);
@@ -50,6 +54,7 @@ export default function Cadastro() {
     }
 
   return (
+      
       <main className="cadastro">
         <section className="cadastroWrapper">
           <Heading className="cadastroHeading" as="h1" size="2xl">
@@ -136,6 +141,8 @@ export default function Cadastro() {
             </Box>
             )}
           />
+           {/* <Modal><h2>Olá mundo</h2></Modal> */}
+
         </section>
       </main>
   )

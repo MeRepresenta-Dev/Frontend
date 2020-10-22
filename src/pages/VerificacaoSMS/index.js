@@ -9,7 +9,7 @@ import InputControl from "../../components/InputControl";
 
 export default function Login() {
 
-   const dadosFormulario = localStorage.getItem('@merepresenta/dadosForm');
+   const dadosFormulario = localStorage.getItem('@merepresenta/cadastro');
 
    const convertedForm = JSON.parse(dadosFormulario);
 

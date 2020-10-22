@@ -13,7 +13,7 @@ export default function Login() {
 
   const routeChange = () => {
     // history.push(path);
-    history.push({ pathname:  '/cadastro/candidato' })
+    history.push({ pathname: '/cadastro/candidato' })
   };
 
   const onSubmit = async (values) => {
