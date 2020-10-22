@@ -15,8 +15,6 @@ import {
 } from '@chakra-ui/core'
 import './styles.css'
 
-import validate from '../../utils/validate'
-import PasswordInput from '../../components/PasswordInput'
 import AdaptedRadioGroup from '../../components/AdaptedRadioGroup'
 import InputControl from '../../components/InputControl'
 
@@ -29,21 +27,26 @@ export default function Cadastro() {
     const history = useHistory();
 
     const onSubmit = async values => {
-    
-        try{
-            const response = await api.post("/register", values);
-            if(response.status === 200){
-              return history.push({
-                     pathname: '/cadastro/candidato-verificacao',
-                    // data: values 
-              })
-            }
+      const formattedValues = {
+        ...values,
+        telefone: parseInt(values.telefone, 10),
+        secao: parseInt(values.secao, 10),
+      }
+      
+      try{
+          const response = await api.post("/register", formattedValues);
+          if(response.status === 200){
+            return history.push({
+                    pathname: '/cadastro/candidato-verificacao',
+                  // data: values 
+            })
           }
-          catch(e){
-            alert('Houve um erro ao enviar o formulário');
-          } 
-    
-        console.log(values)
+        }
+        catch(e){
+          alert('Houve um erro ao enviar o formulário');
+        } 
+  
+      console.log(formattedValues)
     }
 
   return (
@@ -103,8 +106,8 @@ export default function Cadastro() {
               </Box>
               <Box className="senhaInputs">
                 <Heading className="cadastroInputsHeading" as="h2" size="xl">Cadastre uma senha para acesso futuro </Heading>
-                <PasswordInput name="password" label="Senha" />
-                <PasswordInput name="confirmaSenha" label="Confirme sua senha" />
+                <InputControl name="password" type="password" label="Senha" />
+                <InputControl name="confirmaSenha" type="password" label="Confirme sua senha" />
               </Box>
               <Box className="cadastroInputs">
                 <Heading className="cadastroInputsHeading" as="h2" size="xl">Anexar sua foto de candidatura</Heading>
