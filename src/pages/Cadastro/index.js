@@ -123,7 +123,7 @@ export default function Cadastro() {
 //       onChange={handleUploadFile}
 //       accept="application/jpg"    
 //        /input>
-</div>
+// </div>
                 </Box>
               </Box>
               <Box className="cadastroButtons">
