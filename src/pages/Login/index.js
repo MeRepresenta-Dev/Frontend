@@ -11,12 +11,13 @@ import InputControl from "../../components/InputControl";
 export default function Login() {
   const history = useHistory();
 
-  const routeChange = () => {
+  const routeChange = (path = '/cadastro/candidato') => {
     // history.push(path);
-    history.push({pathname: '/cadastro/candidato',})
+    history.push({ pathname: path })
   };
 
   const onSubmit = async (values) => {
+    console.log(values)
     try{
       const response = await api.post("/login", values);
       if(response.status === 200){
