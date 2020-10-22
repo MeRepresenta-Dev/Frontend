@@ -118,6 +118,12 @@ export default function Cadastro() {
                   <Text>
                     Insira a foto que será usado na divulgação da sua campanha, caso faça parte de uma candidatura coletiva você deverá usar a imagem com todos os integrantes.
                   </Text>
+            <input 
+      type="file" 
+      onChange={handleUploadFile}
+      accept="application/jpg"    
+       /input>
+</div>
                 </Box>
               </Box>
               <Box className="cadastroButtons">
