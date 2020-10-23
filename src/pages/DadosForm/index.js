@@ -97,22 +97,22 @@ export default function DadosForm() {
                   label="Como você se identifica?">
                     <div id="espaço"></div>
                   <Radio value="mulherCis">
-                    Mulher cis
+                   <a id="sembold"> Mulher cis</a>
                   </Radio>
                   <Radio value="mulherTrans">
-                    Mulher trans e/ou travesti
+                    <a id="sembold">Mulher trans e/ou travesti</a>
                   </Radio>
                   <Radio value="homemTrans">
-                    Homem trans
+                    <a id="sembold">Homem trans</a>
                   </Radio>
                   <Radio value="homemCis">
-                    Homem cis
+                    <a id="sembold">Homem cis</a>
                   </Radio>
                   <Radio value="naoBinaria">
-                    Pessoa não-binária
+                    <a id="sembold">Pessoa não-binária</a>
                   </Radio>
                   <Radio value="naoDeclarar">
-                    Prefiro não declarar
+                    <a id="sembold" >Prefiro não declarar</a>
                   </Radio>
                 </Field>
               </Box>
@@ -124,19 +124,19 @@ export default function DadosForm() {
                   label="Qual sua orientação afetiva e/ou sexual?">
                     <div id="espaço"></div>
                   <Radio value="hetero">
-                    Hétero
+                    <a id="sembold" >Hétero</a>
                   </Radio>
                   <Radio value="gay">
-                    Gay
+                    <a id="sembold" >Gay</a>
                   </Radio>
                   <Radio value="panBisexual">
-                    Pan ou Bisexual
+                    <a id="sembold" > Pan ou Bisexual</a>
                   </Radio>
                   <Radio value="lesbica">
-                    Lésbica
+                    <a id="sembold">Lésbica</a>
                   </Radio>
                   <Radio value="naoDeclarar">
-                    Prefiro não declarar
+                    <a id="sembold" >Prefiro não declarar</a>
                   </Radio>
                 </Field>
               </Box>
@@ -148,19 +148,19 @@ export default function DadosForm() {
                   label="Qual sua cor ou raça?">
                     <div id="espaço"></div>
                   <Radio value="branca">
-                    Branca
+                    <a id="sembold">Branca</a>
                   </Radio>
                   <Radio value="preta">
-                    Preta
+                    <a id="sembold" > Preta</a>
                   </Radio>
                   <Radio value="parda">
-                    Parda
+                    <a id="sembold" > Parda</a>
                   </Radio>
                   <Radio value="amarela">
-                    Amarela
+                   <a id="sembold"> Amarela</a>
                   </Radio>
                   <Radio value="indigena">
-                    Indígena
+                    <a id="sembold" >Indígena</a>
                   </Radio>
                 </Field>
               </Box>
@@ -172,13 +172,13 @@ export default function DadosForm() {
                   label="Você faz parte de uma Candidatura Coletiva?">
                     <div id="espaço"></div>
                   <Radio value="nao">
-                    Não faço parte
+                    <a id="sembold">Não faço parte</a>
                   </Radio>
                   <Radio value="simNumeroDiferente">
-                    Sim, sou candidata/o individual que está fazendo campanha conjunta com outras candidaturas, cada uma com seu nº de urna próprio
+                    <a id="sembold">Sim, sou candidata/o individual que está fazendo campanha conjunta com outras candidaturas, cada uma com seu nº de urna próprio</a>
                   </Radio>
                   <Radio value="simMesmoNumero">
-                    Sim, sou candidata/o registrada/o, mas represento outras co-candidaturas, sob o mesmo nº de urna
+                    <a id="sembold" > Sim, sou candidata/o registrada/o, mas represento outras co-candidaturas, sob o mesmo nº de urna</a>
                   </Radio>
                 </Field>
               </Box>
@@ -188,22 +188,22 @@ export default function DadosForm() {
                   <FormLabel htmlFor="deficiencia">Você possui alguma deficiência?</FormLabel>
                   <Stack pl={6} mt={1} spacing={1}>
                     <CheckboxArrayControl name="deficiencia" value="nao">
-                      Não possuo
+                      <a id="sembold">Não possuo</a>
                     </CheckboxArrayControl>
                     <CheckboxArrayControl name="deficiencia" value="visual">
-                      Deficiência Visual
+                      <a id="sembold" >Deficiência Visual</a>
                     </CheckboxArrayControl>
                     <CheckboxArrayControl name="deficiencia" value="auditiva">
-                      Deficiência Auditiva
+                      <a id="sembold" >Deficiência Auditiva</a>
                     </CheckboxArrayControl>
                     <CheckboxArrayControl name="deficiencia" value="fisica">
-                      Deficiência Física
+                      <a id="sembold" >Deficiência Física</a>
                     </CheckboxArrayControl>
                     <CheckboxArrayControl name="deficiencia" value="intelectual">
-                      Deficiência Intelectual
+                      <a id="sembold" >Deficiência Intelectual</a>
                     </CheckboxArrayControl>
                     <CheckboxArrayControl name="deficiencia" value="multipla">
-                      Deficiência Multipla
+                      <a id="sembold">Deficiência Multipla</a>
                     </CheckboxArrayControl>
                   </Stack>
                   <Error name="deficiencia" />

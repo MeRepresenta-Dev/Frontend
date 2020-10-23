@@ -17,3 +17,8 @@
     width: 60%;
     height: 10%;
 }
+.close{
+    background: #EF476F;
+    box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}
