@@ -29,6 +29,7 @@ export default function Cadastro() {
     const toast = useToast();
     const history = useHistory();
     const [isLoading, setLoading] = useState(false)
+    const [photoFile, setPhoto] = useState(undefined)
 
     const onSubmit = values => {
       const formattedValues = {
@@ -84,14 +85,14 @@ export default function Cadastro() {
           </Heading>
 
           <Formik 
-          initialValues={{ photoFile: null }}
+          initialValues={{ photo: null }}
           onSubmit={onSubmit} 
           render={({ values, handleSubmit, setFieldValue }) => {
 
             const onSendPhoto = async event => {
               const formData = new FormData();
                formData.append('photo', event.target.files[0], event.target.name)
-               setFieldValue('photoFile', event.target.files[0]);
+               setPhoto(event.target.files[0]);
                console.log(values)
                try {
                  const response = await api.post("/file", formData)
@@ -193,7 +194,7 @@ export default function Cadastro() {
                 <div className="form-group">
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Anexar sua foto de candidatura</Heading>
                   <Box className="cadastroInputs">
-                    <Thumb file={values.photoFile} />
+                    <Thumb file={photoFile} />
                     <Text className="helperTextUpload">                    
                       Insira a foto que será usado na divulgação da sua campanha, caso faça parte de uma candidatura 
                       coletiva você deverá usar a imagem com todos os integrantes.
