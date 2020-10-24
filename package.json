@@ -12,6 +12,7 @@
     "axios": "^0.20.0",
     "emotion-theming": "^10.0.27",
     "final-form": "^4.20.1",
+    "formik": "^2.2.1",
     "history": "^5.0.0",
     "install": "^0.13.0",
     "react": "^16.13.1",
