@@ -33,19 +33,15 @@ export default function Cadastro() {
     const onSubmit = values => {
       const formattedValues = {
         ...values,
+        photo: '',
         telefone: parseInt(values.telefone, 10),
         secao: parseInt(values.secao, 10),
       }
 
        localStorage.setItem('@merepresenta/cadastro', JSON.stringify(values));
        setLoading(true);
-       const fields = Object.keys(formattedValues).filter(item => item !== 'photo')
-       
-       const formData = new FormData();
-       formData.append('photo', values.photo, values.photo.name)
-       fields.forEach(item => formData.append(item, formattedValues[item]))
 
-       api.post("/register", formData)
+       api.post("/register", formattedValues)
         .then((res) => {
           if(res.status === 200){
             setLoading(false);
@@ -88,10 +84,24 @@ export default function Cadastro() {
           </Heading>
 
           <Formik 
-          initialValues={{ photo: null }}
+          initialValues={{ photoFile: null }}
           onSubmit={onSubmit} 
-   
           render={({ values, handleSubmit, setFieldValue }) => {
+
+            const onSendPhoto = async event => {
+              const formData = new FormData();
+               formData.append('photo', event.target.files[0], event.target.name)
+               setFieldValue('photoFile', event.target.files[0]);
+               console.log(values)
+               try {
+                 const response = await api.post("/file", formData)
+                 if (response.status === 200) console.log(response)
+        
+               } catch (e) {
+                console.log(e)
+               }                
+            }
+
             return (
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -133,6 +143,28 @@ export default function Cadastro() {
                 </div>
 
                 <div className="form-group">
+                  <Heading className="cadastroInputsHeading" as="h2" size="lg">Como encontramos sua candidatura nas redes sociais?</Heading>
+                  <label htmlFor="telefone">
+                    <span>Facebook</span>
+                    <Input id="facebook" name="facebook" placeholder="www.facebook.com" onChange={(event) => {
+                    setFieldValue(event.target.name, event.target.value);
+                  }} />
+                  </label>
+                  <label htmlFor="instagram">
+                    <span>Instagram</span>
+                    <Input id="instagram" name="instagram" placeholder="www.instagram.com" onChange={(event) => {
+                    setFieldValue(event.target.name, event.target.value);
+                  }} />
+                  </label>
+                  <label htmlFor="twitter">
+                    <span>Twitter</span>
+                    <Input id="twitter" name="twitter" placeholder="www.twitter.com" onChange={(event) => {
+                    setFieldValue(event.target.name, event.target.value);
+                  }} />
+                  </label>
+                </div>
+
+                <div className="form-group">
                   <label htmlFor="preenchimentoCandidato">
                     <Heading className="cadastroInputsHeading" as="h2" size="lg">Quem está preenchendo o cadastro é a/o própria/o candidata/o?</Heading>
                     <RadioGroup name="preenchimentoCandidato" onChange={event => setFieldValue(event.target.name, event.target.value)}>
@@ -161,15 +193,13 @@ export default function Cadastro() {
                 <div className="form-group">
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Anexar sua foto de candidatura</Heading>
                   <Box className="cadastroInputs">
-                    <Thumb file={values.photo} />
+                    <Thumb file={values.photoFile} />
                     <Text className="helperTextUpload">                    
                       Insira a foto que será usado na divulgação da sua campanha, caso faça parte de uma candidatura 
                       coletiva você deverá usar a imagem com todos os integrantes.
                     </Text>
                   </Box>
-                  <input id="photo" name="photo" className="inputPhoto" type="file" onChange={(event) => {
-                    setFieldValue(event.target.name, event.target.files[0]);
-                  }} className="form-control" />
+                  <input id="photo" name="photo" className="inputPhoto" type="file" onChange={onSendPhoto} className="form-control" />
                 </div>
 
                 <Box className="cadastroButtons">
@@ -188,8 +218,6 @@ export default function Cadastro() {
               </form>
             );
           }} />
-         
-
         </section>
       </main>
   )
