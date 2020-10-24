@@ -6,7 +6,6 @@ import { Form } from 'react-final-form'
 import api from '../../services/api'
 import {useHistory} from 'react-router-dom'
 import { Formik } from "formik";
-// import { yup } from "yup";
 import Thumb from '../../components/Thumb'
 
 import {
@@ -29,7 +28,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 export default function Cadastro() {
     const toast = useToast();
     const history = useHistory();
-    const handleSubmit = (values) => console.log('=>', values)
     const [isLoading, setLoading] = useState(false)
 
     const onSubmit = values => {
@@ -38,7 +36,6 @@ export default function Cadastro() {
         telefone: parseInt(values.telefone, 10),
         secao: parseInt(values.secao, 10),
       }
-      console.log('=> fVal', formattedValues)
 
        localStorage.setItem('@merepresenta/cadastro', JSON.stringify(values));
        setLoading(true);
@@ -47,7 +44,7 @@ export default function Cadastro() {
        const formData = new FormData();
        formData.append('photo', values.photo, values.photo.name)
        fields.forEach(item => formData.append(item, formattedValues[item]))
-       console.log('f:', formData)
+
        api.post("/register", formData)
         .then((res) => {
           if(res.status === 200){
@@ -81,8 +78,6 @@ export default function Cadastro() {
           })
         });
       
-  
-      console.log(formattedValues)
     }
 
   return (
