@@ -12,14 +12,17 @@
     "axios": "^0.20.0",
     "emotion-theming": "^10.0.27",
     "final-form": "^4.20.1",
+    "formik": "^2.2.1",
     "history": "^5.0.0",
     "install": "^0.13.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropzone": "^11.2.1",
     "react-final-form": "^6.5.1",
     "react-hooks-helper": "^1.6.0",
     "react-router-dom": "5.1.2",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts start",
