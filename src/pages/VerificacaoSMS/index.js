@@ -1,17 +1,16 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Form } from "react-final-form";
-import { Box, Button, Heading } from "@chakra-ui/core";
+import { Box, Button, Heading, useToast } from "@chakra-ui/core";
 import api from "../../services/api";
 import "./styles.css";
 
 import InputControl from "../../components/InputControl";
 
 export default function Login() {
-
-   const dadosFormulario = localStorage.getItem('@merepresenta/cadastro');
-
-   const convertedForm = JSON.parse(dadosFormulario);
+  const toast = useToast();
+  const dadosFormulario = localStorage.getItem('@merepresenta/cadastro');
+  const convertedForm = JSON.parse(dadosFormulario);
 
   const history = useHistory();
 
@@ -20,23 +19,41 @@ export default function Login() {
   };
 
   const enviarNovamente =  async () => {
-    alert("enviar novamente");
+    toast({
+      title: `Atenção!`,
+      description: "Enviar novamente",
+      status: "warning",
+      duration: 3000,
+      position: "top",
+      isClosable: true,
+    })
   };
 
-  const onSubmit = async (values) => {
-    const {codigo1, codigo2, codigo3, codigo4} = values;
-    
-    const code = `${codigo1}${codigo2}${codigo3}${codigo4}`;
-  
-    try{
-      const response = await api.post("/validatesms", {code:code});
-      if(response.status === 200){
-        return routeChange('/candidatos/dados-form');
-      }
-    }
-    catch(e){
-      alert('Houve um problema com o código');
-    }
+  const onSubmit = (values) => {
+    const { codigoSMS } = values;
+    api.post("/validatesms", { code: codigoSMS })
+      .then((response) => {
+        toast({
+          title: `Sucesso!`,
+          description: "Seus dados foram enviados",
+          status: "success",
+          duration: 3000,
+          position: "top",
+          isClosable: true,
+        })
+        setTimeout(() => {
+          return routeChange('/candidatos/dados-form');
+        }, 3000)})
+      .catch(e => 
+        toast({
+          title: `Erro`,
+          description: "Houve um erro ao validar o código",
+          status: "error",
+          duration: 5000,
+          position: "top",
+          isClosable: true,
+        })
+      )
   };
   
   return (
@@ -57,23 +74,9 @@ export default function Login() {
               shadow="1px 1px 3px rgba(0,0,0,0.3)"
               onSubmit={handleSubmit}
             >
-              <div id="teste">
-                <Box className="campos">
-                  <InputControl className="campos2" name="codigo1" maxlength="1" />
-                </Box>
-                <Box className="campos">
-                  <InputControl className="campos2" name="codigo2" maxlength="1" />
-                </Box>
-                <Box className="campos">
-                  <InputControl className="campos2" name="codigo3" maxlength="1" />
-                </Box>
-                <Box className="campos">
-                  <InputControl className="campos2" name="codigo4" maxlength="1" />
-                </Box>
-              </div>
-              
-              <br></br>
+
               <Box className="loginButtons">
+                <InputControl className="campos2" name="codigoSMS" maxlength="4" />
                 <a id="enviarNovamente" className="forgetPassword" onClick={enviarNovamente}>
                   Enviar novamente
                 </a>

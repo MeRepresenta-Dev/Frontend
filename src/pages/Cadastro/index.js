@@ -38,10 +38,10 @@ export default function Cadastro() {
         secao: parseInt(values.secao, 10),
       }
 
-       localStorage.setItem('@merepresenta/cadastro', JSON.stringify(values));
-       setLoading(true);
-
-       api.post("/register", formattedValues)
+      localStorage.setItem('@merepresenta/cadastro', JSON.stringify(values));
+      setLoading(true);
+      console.log('submitting', formattedValues)
+      api.post("/register", formattedValues)
         .then((res) => {
           if(res.status === 200){
             setLoading(false);
@@ -84,18 +84,20 @@ export default function Cadastro() {
           </Heading>
 
           <Formik 
-          initialValues={{ photo: 'photo' }}
+          initialValues={{ photo: null }}
           onSubmit={onSubmit} 
           render={({ values, handleSubmit, setFieldValue }) => {
 
             const onSendPhoto = async event => {
               const formData = new FormData();
-               formData.append('file', event.target.files[0], event.target.name)
-               setPhoto(event.target.files[0]);
-               console.log(values)
-               try {
-                 const response = await api.post("/file", formData)
-                 if (response.status === 200) console.log(response)
+                formData.append('file', event.target.files[0], event.target.name)
+                setPhoto(event.target.files[0]);
+
+                try {
+                  const response = await api.post("/file", formData)
+                  if (response.status === 201) {
+                    setFieldValue('photo', response.data.photoUrl)
+                  }
         
                } catch (e) {
                 console.log(e)
@@ -130,7 +132,7 @@ export default function Cadastro() {
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Para mantermos contato:</Heading>
                   <label htmlFor="telefone">
                     <span>Telefone Celular</span>
-                    <Input id="telefone" name="telefone" onChange={(event) => {
+                    <Input id="telefone" name="telefone" placeholder="+55 21925640835" onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
