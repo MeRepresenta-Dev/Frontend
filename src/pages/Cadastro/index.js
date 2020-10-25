@@ -34,7 +34,6 @@ export default function Cadastro() {
     const onSubmit = values => {
       const formattedValues = {
         ...values,
-        photo: '',
         telefone: parseInt(values.telefone, 10),
         secao: parseInt(values.secao, 10),
       }
@@ -85,13 +84,13 @@ export default function Cadastro() {
           </Heading>
 
           <Formik 
-          initialValues={{ photo: null }}
+          initialValues={{ photo: 'photo' }}
           onSubmit={onSubmit} 
           render={({ values, handleSubmit, setFieldValue }) => {
 
             const onSendPhoto = async event => {
               const formData = new FormData();
-               formData.append('photo', event.target.files[0], event.target.name)
+               formData.append('file', event.target.files[0], event.target.name)
                setPhoto(event.target.files[0]);
                console.log(values)
                try {
