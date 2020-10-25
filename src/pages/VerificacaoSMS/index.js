@@ -42,7 +42,7 @@ export default function Login() {
           isClosable: true,
         })
         setTimeout(() => {
-          return routeChange('/candidatos/dados-form');
+          return routeChange('/candidato/dados-form');
         }, 3000)})
       .catch(e => 
         toast({

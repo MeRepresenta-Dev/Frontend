@@ -40,16 +40,16 @@ const App = () => (
     <ThemeProvider theme = { newTheme }>
     <Header/>
     <Switch>
-    <Route exact path = "/" children = { <Home></Home> }/> 
-    <Route path = "/login" children = { <Login></Login>}/> 
-    <Route path = "/cadastro/candidato" children = { <Cadastro></Cadastro> }/> 
-    <Route path = "/cadastro/candidato-verificacao" children = { <CadastroVerificacao></CadastroVerificacao> }/> 
-    <Route path = "/cadastro/candidato-dados" children = { <DadosForm></DadosForm> }/> 
-    <Route path = "/cadastro/candidato-pautas" children = { <CadastroPautas></CadastroPautas> }/> 
-    <Route path = "/cadastro/candidato-temas" children = { <CadastroTemas></CadastroTemas> }/> 
-    <Route path = "/cadastro/candidato-concluido" children = { <CadastroConcluido></CadastroConcluido> }/>
-    <Route path = "/candidato/saudacao" children = { <Obrigado></Obrigado> }/> 
-    <Route path = "/candidato/:slug" children = { <EleitorResultados></EleitorResultados> }/>
+    <Route exact path = "/" children = { <Home /> }/> 
+    <Route path = "/login" children = { <Login />}/> 
+    <Route path = "/cadastro/candidato" children = { <Cadastro /> }/> 
+    <Route path = "/cadastro/candidato-verificacao" children = { <CadastroVerificacao /> }/> 
+    <Route path = "/candidato/dados-form" children = { <DadosForm /> }/> 
+    <Route path = "/cadastro/candidato-pautas" children = { <CadastroPautas /> }/> 
+    <Route path = "/cadastro/candidato-temas" children = { <CadastroTemas /> }/> 
+    <Route path = "/cadastro/candidato-concluido" children = { <CadastroConcluido /> }/>
+    <Route path = "/candidato/saudacao" children = { <Obrigado /> }/> 
+    <Route path = "/candidato/:slug" children = { <EleitorResultados /> }/>
     </Switch>
     <Footer/>
     </ThemeProvider>

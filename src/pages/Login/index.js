@@ -21,7 +21,7 @@ export default function Login() {
     try{
       const response = await api.post("/login", values);
       if(response.status === 200){
-        return routeChange('/candidatos/dados-form');
+        return routeChange('/candidato/dados-form');
       }
     }
     catch(e){

@@ -217,7 +217,7 @@ export default function DadosForm() {
                   Pautas #MeRepresenta
                 </Heading>
                 <Text>
-                  Para entendermos melhor quem você representa, o próximo passo é definir sua posição  em relação algumas pautas selecionadas pela gente.
+                  Para entendermos melhor quem você representa, o próximo passo é definir sua posição em relação algumas pautas selecionadas pela gente.
                 </Text>
               </Box>
               <Box className="dadosButtons">
