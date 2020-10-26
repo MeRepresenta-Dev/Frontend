@@ -1,0 +1,87 @@
+.Score {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #C4C4C4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 96px;
+  width: 100%;
+}
+
+.Score .check,
+.Score .progress {
+  margin: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Score.active {
+  background: #EF476F;
+  border-color: transparent;
+}
+.Score .progress {
+  margin-bottom: 1rem;
+}
+
+.Score.active .label,
+.Score .progress .slider .level {
+  color: #FFF;
+}
+
+.Score .label,
+.Score .progress .slider .level {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.Score .progress {
+  display: flex;
+  width: calc(100% - 32px);
+  justify-content: space-between;
+}
+
+.Score .progress .bar {
+  width: 272px;
+  height: 8px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 10px;
+  display: flex;
+}
+
+.Score .progress .bar .point {
+  height: 100%;
+  width: 20%;
+}
+
+.Score .progress .bar .point.active {
+  background: #FFC43D;
+}
+
+.Score .progress .slider {
+  display: flex;
+  align-items: center;
+}
+
+.Score .progress .slider .level {
+  color: 
+}
+
+.Score .progress .btn {
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  color: #FFF;
+}
+
+.Score .progress .btn.dec {
+  transform: rotate(90deg);
+}
+
+.Score .progress .btn.inc {
+  transform: rotate(-90deg);
+}

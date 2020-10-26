@@ -19,36 +19,31 @@ import CheckboxArrayControl from '../../components/CheckboxArrayControl'
 import Control from '../../components/Control'
 import Error from '../../components/ErrorInput'
 import TextareaControl from '../../components/TextareaControl'
-import validate from '../../utils/validate'
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 
 
 export default function DadosForm() {
-
     const history = useHistory();
+    const userData = JSON.parse(localStorage.getItem('@merepresenta/cadastro'));
 
     const onSubmit = async values => {
+        try{
+          const response = await api.get("/me", values);
+          if(response.status === 200){
+            return history.push({
+              pathname: '/cadastro/candidato-pautas',
+              // data: values 
+            })
+          }
+        }
+        catch(e){
+          alert('Houve um erro ao enviar o formulário');
+        } 
 
-
-        // try{
-        //     const response = await api.post("/user", values);
-        //     if(response.status === 200){
-        //       return history.push({
-        //              pathname: '/cadastro/candidato-pautas',
-        //             // data: values 
-        //       })
-        //     }
-        //   }
-        //   catch(e){
-        //     alert('Houve um erro ao enviar o formulário');
-        //   } 
-  
-             console.log(values); 
-
-            localStorage.setItem('@merepresenta/form', JSON.stringify(values));
-            history.push({pathname: '/cadastro/candidato-pautas',})
+        localStorage.setItem('@merepresenta/form', JSON.stringify(values));
+        // history.push({pathname: '/cadastro/candidato-pautas',})
     }
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
@@ -64,11 +59,11 @@ export default function DadosForm() {
     <main className="dados">
       <section className={`dadosWrapper ${isMobile ? "responsive" : ""}`}>
         <Box className="dadosTSEData">
-          <img src="https://via.placeholder.com/150" alt="Foto do candidato" />
+          <img src={`http://${userData.photo}`} className="candidato-avatar"alt="Foto do candidato" />
         </Box>
         <Box className="dadosContent">
           <Heading className="dadosHeading" as="h1" size="lg">
-            Olá, [Nome do Candidato depois de logado]!
+            Olá, {userData.name}!
           </Heading>
           <Text>
             Obrigada por ingressar na nossa plataforma! Agora precisamos de algumas informações sobre quem você é. As questões identitárias poderão ser utilizadas pelos eleitores para filtrarem as candidaturas.
@@ -89,7 +84,8 @@ export default function DadosForm() {
               shadow="1px 1px 3px rgba(0,0,0,0.3)"
               onSubmit={handleSubmit}
             >
-                <div id="espaço"></div>
+              <div id="espaço"></div>
+
               <Box className="dadosInputs">
                 <Field
                   name="identidadeGenero"
@@ -183,10 +179,11 @@ export default function DadosForm() {
                 </Field>
               </Box>
               <div id="espaço"></div>
+           
               <Box className="dadosInputs">
                 <Control name="deficiencia" my={4}>
                   <FormLabel htmlFor="deficiencia">Você possui alguma deficiência?</FormLabel>
-                  <Stack pl={6} mt={1} spacing={1}>
+                  <Stack mt={1} spacing={1}>
                     <CheckboxArrayControl name="deficiencia" value="nao">
                       <a id="sembold">Não possuo</a>
                     </CheckboxArrayControl>
@@ -209,9 +206,13 @@ export default function DadosForm() {
                   <Error name="deficiencia" />
                 </Control>
               </Box>
+
+              <div id="espaço"></div>
+              
               <Box className="dadosInputs">
               <TextareaControl name="notes" placeholder="Defendo pautas que se encaixem com …" label="Escreva um pouco sobre você ou sobre a candidatura coletiva" />
               </Box>
+              <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Heading className="dadosHeading" as="h1" size="lg">
                   Pautas #MeRepresenta
