@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Checkbox, Icon, useToast } from '@chakra-ui/core'
 import './style.css'
 
@@ -7,26 +7,28 @@ export default function Score ({ label, name, value, onChangeScore }) {
   const [isActive, setActive] = useState(false)
   const toast = useToast();
   const barList = new Array(5);
+  
   const handleScore = (score) => {
-    if (score >= 0 && score <= 5)
-      setLevel(score)
-    else
+    if(score < 0 || score > 5)
       toast({
         title: `Atenção!`,
-        description: "A pontuação deve ser de 1 a 5",
+        description: "Escolha um valor de 1 a 5",
         status: "warning",
-        duration: 2000,
+        duration: 3000,
         position: "top",
         isClosable: true,
       })
-    
-    onChangeScore({ [value]: level })
+    else onChangeScore({ title: value, score: level })
   }
 
   const handleCheck = (isActive) => {
-    if(!isActive) handleScore(0)
+    setLevel(0)
     setActive(isActive)
   }
+
+  useEffect(() =>{
+    handleScore(level)
+  }, [level])
 
 
   return (
@@ -48,11 +50,11 @@ export default function Score ({ label, name, value, onChangeScore }) {
         </div>
 
         <div className="slider">
-          <button className="btn dec" disabled={!isActive} onClick={() => handleScore(level - 1)}>
+          <button className="btn dec" disabled={!isActive} onClick={() => {if (level > 0) setLevel(level - 1)}}>
             <Icon name="triangle-down" />
           </button>
           <span className="level">{level}</span>
-          <button className="btn inc" disabled={!isActive} onClick={() => handleScore(level + 1)}>
+          <button className="btn inc" disabled={!isActive} onClick={() => {if (level < 5) setLevel(level + 1)}}>
             <Icon name="triangle-down" />
           </button>
         </div>

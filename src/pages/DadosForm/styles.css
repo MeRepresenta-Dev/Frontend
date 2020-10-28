@@ -13,13 +13,6 @@
   grid-template-columns: repeat(auto-fill, minmax(400px, 1.4fr)) !important;
 }
 
-.dadosInputs [type="checkbox"] + div {
-  color: #a8a8a8;
-}
-
-.dadosInputs [type="checkbox"]:checked + div {
-  color: #fff
-}
 .candidato-avatar {
   width: 185px;
   margin-left: 56px;
