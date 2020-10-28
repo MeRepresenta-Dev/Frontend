@@ -5,6 +5,7 @@ import {
     Button,
     Heading,
     Flex,
+    useToast,
     Text
   } from '@chakra-ui/core'
 import { useHistory } from 'react-router-dom'
@@ -14,20 +15,38 @@ import api from "../../services/api";
 
 export default function Temas() {
 
-const [score, setScore] = useState([])
-
+const [score, setScore] = useState([]);
+const [totalScore, setTotalScore] = useState(5);
 const dadosPaginaAnt = localStorage.getItem('@merepresenta/pautas');
-
 const convertedForm = JSON.parse(dadosPaginaAnt);
-
 const temasData = {...convertedForm};
-
 const history = useHistory();
+const toast = useToast();
 
 const handleScore = (newScore) => {
   let newListScore = [...score.filter(el => el.title !== newScore.title), newScore].filter(el => el.score > 0);
-  setScore(newListScore);
-  console.log(newListScore)
+  let total = newListScore.reduce( (accum, curr) => {return accum + curr.score}, 0);
+  if(totalScore > 0) setTotalScore(5 - total);
+  else
+    toast({
+      title: `Atenção!`,
+      description: "Você tem até 5 pontos para distribuir",
+      status: "warning",
+      duration: 3000,
+      position: "top",
+      isClosable: true,
+    })
+  if(score.length < 3) setScore(newListScore);
+  else
+    toast({
+      title: `Atenção!`,
+      description: "Escolha até 3 temas",
+      status: "warning",
+      duration: 3000,
+      position: "top",
+      isClosable: true,
+    })
+  console.log(total)
 }
 
 const irParaSaudacao  = async () =>{
@@ -55,7 +74,7 @@ const irParaSaudacao  = async () =>{
                 <strong>1</strong>. Escolha de 1 até 3 temas abaixo que definam sua candidatura. <br></br>
                 <strong>2</strong>. Em seguida, distribua até 5 pontos entre os temas escolhidos.
             </h2>
-            <h2 id="textAux2">Pontos restantes: <span id="spanAux1">4</span> pontos</h2>
+            <h2 id="textAux2">Pontos restantes: <span id="spanAux1">{totalScore}</span> pontos</h2>
 
             <div id="divAux2">    
               <div id="divGenero" >
