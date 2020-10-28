@@ -36,6 +36,14 @@ label {
   pointer-events: none;
 }
 
+[type="checkbox"] + div {
+  color: #a8a8a8;
+}
+
+[type="checkbox"]:checked + div {
+  color: #fff
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

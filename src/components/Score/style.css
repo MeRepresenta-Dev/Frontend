@@ -38,6 +38,10 @@
   line-height: 20px;
 }
 
+.Score .progress .slider .level {
+  font-size: 24px;
+}
+
 .Score .progress {
   display: flex;
   width: calc(100% - 32px);
