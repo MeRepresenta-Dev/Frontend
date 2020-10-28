@@ -19,7 +19,7 @@ const [score, setScore] = useState([]);
 const [totalScore, setTotalScore] = useState(5);
 const dadosPaginaAnt = localStorage.getItem('@merepresenta/pautas');
 const convertedForm = JSON.parse(dadosPaginaAnt);
-const temasData = {...convertedForm};
+const temasData = {temas: score};
 const history = useHistory();
 const toast = useToast();
 
@@ -46,75 +46,69 @@ const handleScore = (newScore) => {
       position: "top",
       isClosable: true,
     })
-  console.log(total)
 }
 
 const irParaSaudacao  = async () =>{
-    try{
-        const response = await api.post("/", temasData);
-        if(response.status === 200){
-          return history.push('/candidatos/saudacao');
-        }
-      }
-      catch(e){
-        alert('Houve um erro ao enviar os dados');
-      }  
+  try{
+    const response = await api.post("/save", temasData);
+    if(response.status === 200){
+      return history.push('/candidatos/saudacao');
+    }
+  }
+  catch(e){
+    alert('Houve um erro ao enviar os dados');
+  }  
 }
 
-
-
-  return (
-        
+  return (        
         <div id="divPrincipal">
-            <div id="divAux1" >
-            <h2 id="textPrincipal">
-                Escolha até 3 temas <br></br>que definem sua candidatura,
-            </h2>
-            <h2 id="textAux1" >
-                <strong>1</strong>. Escolha de 1 até 3 temas abaixo que definam sua candidatura. <br></br>
-                <strong>2</strong>. Em seguida, distribua até 5 pontos entre os temas escolhidos.
-            </h2>
-            <h2 id="textAux2">Pontos restantes: <span id="spanAux1">{totalScore}</span> pontos</h2>
+          <div id="divAux1" >
+          <h2 id="textPrincipal">
+              Escolha até 3 temas <br></br>que definem sua candidatura,
+          </h2>
+          <h2 id="textAux1" >
+              <strong>1</strong>. Escolha de 1 até 3 temas abaixo que definam sua candidatura. <br></br>
+              <strong>2</strong>. Em seguida, distribua até 5 pontos entre os temas escolhidos.
+          </h2>
+          <h2 id="textAux2">Pontos restantes: <span id="spanAux1">{totalScore}</span> pontos</h2>
 
-            <div id="divAux2">    
+          <div id="divAux2">    
+            <div id="divGenero" >
+              <Score label="#Genero" name="bla" value="genero" onChangeScore={handleScore} />
+            </div>
               <div id="divGenero" >
-                <Score label="#Genero" name="bla" value="genero" onChangeScore={handleScore} />
+                <Score label="#LGBT+" name="bla" value="lgbt" onChangeScore={handleScore} />
               </div>
-                <div id="divGenero" >
-                  <Score label="#LGBT+" name="bla" value="lgbt" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Raça" name="bla" value="raca" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Povos Tradicionais" name="bla" value="povostradicionais" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Politicas Sociais" name="bla" value="politicassociais" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Segurança Pública" name="bla" value="segurancapublica" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Drogas" name="bla" value="drogas" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Comunicação" name="bla" value="comunicacao" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Democracia" name="bla" value="democracia" onChangeScore={handleScore} />
-                </div>
-                <div id="divGenero" >
-                  <Score label="#Meio Ambiente" name="bla" value="meioambiente" onChangeScore={handleScore} />
-                </div>
-            </div>
-        
-            <div id="divContinuar">
-              <Button onClick="continuarClick" id="ButtonContinuar" >Continuar</Button>
-            </div>
-        </div>
-        
+              <div id="divGenero" >
+                <Score label="#Raça" name="bla" value="raca" onChangeScore={handleScore} />
+              </div>
+              <div id="divGenero" >
+                <Score label="#Povos Tradicionais" name="bla" value="povostradicionais" onChangeScore={handleScore} />
+              </div>
+              <div id="divGenero" >
+                <Score label="#Politicas Sociais" name="bla" value="politicassociais" onChangeScore={handleScore} />
+              </div>
+              <div id="divGenero" >
+                <Score label="#Segurança Pública" name="bla" value="segurancapublica" onChangeScore={handleScore} />
+              </div>
+              <div id="divGenero" >
+                <Score label="#Drogas" name="bla" value="drogas" onChangeScore={handleScore} />
+              </div>
+              <div id="divGenero" >
+                <Score label="#Comunicação" name="bla" value="comunicacao" onChangeScore={handleScore} />
+              </div>
+              <div id="divGenero" >
+                <Score label="#Democracia" name="bla" value="democracia" onChangeScore={handleScore} />
+              </div>
+              <div id="divGenero" >
+                <Score label="#Meio Ambiente" name="bla" value="meioambiente" onChangeScore={handleScore} />
+              </div>
+          </div>
+      
+          <div id="divContinuar">
+            <Button onClick={() => irParaSaudacao()} id="ButtonContinuar" >Continuar</Button>
+          </div>
+      </div>
     </div>
-  
   );
 }
