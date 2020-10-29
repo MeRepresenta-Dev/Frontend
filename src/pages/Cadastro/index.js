@@ -15,6 +15,7 @@ import {
   Radio, 
   RadioGroup,
   Text,
+  Tooltip,
   Box,
   useToast
 } from '@chakra-ui/core'
@@ -109,7 +110,8 @@ export default function Cadastro() {
                 <div className="form-group">
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Dados da candidatura</Heading>
                   <label htmlFor="email">
-                    <span>Nome de Urna</span>
+                    <span>Nome de Urna (<Tooltip label="Localizada no título de eleitor, a seção eleitoral é composta por uma sequência de 4 dígitos
+">?</Tooltip>)</span>
                     <Input id="name" name="name" onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
@@ -131,7 +133,7 @@ export default function Cadastro() {
                 <div className="form-group">
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Para mantermos contato:</Heading>
                   <label htmlFor="telefone">
-                    <span>Telefone Celular</span>
+                    <span>Telefone Celular com DDD</span>
                     <Input id="telefone" name="telefone" placeholder="+55 21925640835" onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />

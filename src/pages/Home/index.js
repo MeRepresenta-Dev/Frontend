@@ -74,7 +74,7 @@ export default function Home() {
               </Text>
             </Box>
             <Box className="heroButtons">
-              <Button onClick={routeChange} className="pinkButton">SOU CANDIDATO</Button>
+              <Button onClick={routeChange} className="pinkButton">SOU CANDIDATA/O</Button>
               <Button className="blueButton">QUERO SER VOLUNTÁRIA/O</Button>
               <Button className="grayButton">SOU ELEITOR/A</Button>
             </Box>

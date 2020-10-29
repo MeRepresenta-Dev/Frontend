@@ -68,6 +68,7 @@ const handleScore = (newScore) => {
 }
 
 const irParaSaudacao  = async () =>{
+  
   try{
     const response = await api.post("/save", temasData);
     if(response.status === 200){
@@ -95,33 +96,33 @@ const irParaSaudacao  = async () =>{
             <div id="divGenero" >
               <Score label="#Genero" name="bla" value="genero" onChangeScore={handleScore} />
             </div>
-              <div id="divGenero" >
-                <Score label="#LGBT+" name="bla" value="lgbt" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Raça" name="bla" value="raca" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Povos Tradicionais" name="bla" value="povostradicionais" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Politicas Sociais" name="bla" value="politicassociais" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Segurança Pública" name="bla" value="segurancapublica" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Drogas" name="bla" value="drogas" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Comunicação" name="bla" value="comunicacao" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Democracia" name="bla" value="democracia" onChangeScore={handleScore} />
-              </div>
-              <div id="divGenero" >
-                <Score label="#Meio Ambiente" name="bla" value="meioambiente" onChangeScore={handleScore} />
-              </div>
+            <div id="divGenero" >
+              <Score label="#LGBT+" name="bla" value="lgbt" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Raça" name="bla" value="raca" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Povos Tradicionais" name="bla" value="povostradicionais" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Políticas Sociais" name="bla" value="politicassociais" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Segurança Pública" name="bla" value="segurancapublica" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Drogas" name="bla" value="drogas" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Comunicação" name="bla" value="comunicacao" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Democracia" name="bla" value="democracia" onChangeScore={handleScore} />
+            </div>
+            <div id="divGenero" >
+              <Score label="#Meio Ambiente" name="bla" value="meioambiente" onChangeScore={handleScore} />
+            </div>
           </div>
       
           <div id="divContinuar">
