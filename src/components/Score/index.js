@@ -18,7 +18,7 @@ export default function Score ({ label, name, value, onChangeScore }) {
         position: "top",
         isClosable: true,
       })
-    else onChangeScore({ title: value, score: level })
+    else onChangeScore({ [value]: level.toString() })
   }
 
   const handleCheck = (isActive) => {

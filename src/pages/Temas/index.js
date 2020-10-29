@@ -15,18 +15,36 @@ import api from "../../services/api";
 
 export default function Temas() {
 
-const [score, setScore] = useState([]);
+const [score, setScore] = useState({
+  genero: '0',
+  raca: '0',
+  lgbt: '0',
+  povostradicionais: '0',
+  politicassociais: '0',
+  segurancapublica: '0',
+  drogas: '0',
+  comunicacao: '0',
+  democracia: '0',
+  meioambiente: '0'
+});
 const [totalScore, setTotalScore] = useState(5);
 const dadosPaginaAnt = localStorage.getItem('@merepresenta/pautas');
 const convertedForm = JSON.parse(dadosPaginaAnt);
-const temasData = {temas: score};
+const temasData = {...score};
 const history = useHistory();
 const toast = useToast();
 
 const handleScore = (newScore) => {
-  let newListScore = [...score.filter(el => el.title !== newScore.title), newScore].filter(el => el.score > 0);
-  let total = newListScore.reduce( (accum, curr) => {return accum + curr.score}, 0);
-  if(totalScore > 0) setTotalScore(5 - total);
+  let keyScore = Object.keys(newScore)[0]
+  let valueScore = Object.values(newScore)[0]
+  let newObjScore = {
+    ...score,
+    [keyScore]: valueScore
+  }
+  setScore(newObjScore)
+  // let newListScore = [...score.filter(el => el.title !== newScore.title), newScore].filter(el => el.score > 0);
+  let total = 5 - (Object.values(newObjScore).reduce( (accum, curr) => {return accum + parseInt(curr, 10)}, 0));
+  if(total >= 0) setTotalScore(total);
   else
     toast({
       title: `Atenção!`,
@@ -36,16 +54,17 @@ const handleScore = (newScore) => {
       position: "top",
       isClosable: true,
     })
-  if(score.length < 3) setScore(newListScore);
-  else
-    toast({
-      title: `Atenção!`,
-      description: "Escolha até 3 temas",
-      status: "warning",
-      duration: 3000,
-      position: "top",
-      isClosable: true,
-    })
+  // if(score.length < 3) setScore(newListScore);
+  // else
+  //   toast({
+  //     title: `Atenção!`,
+  //     description: "Escolha até 3 temas",
+  //     status: "warning",
+  //     duration: 3000,
+  //     position: "top",
+  //     isClosable: true,
+  //   })
+  console.log(newObjScore, total)
 }
 
 const irParaSaudacao  = async () =>{
