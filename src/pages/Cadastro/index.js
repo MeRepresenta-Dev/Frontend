@@ -56,7 +56,7 @@ export default function Cadastro() {
             })
             setTimeout(() => {
               return history.push({
-                pathname: '/cadastro/candidato-verificacao',
+                pathname: '/candidato/dados-form',
                 // data: values 
               })
             }, 2000)
@@ -215,9 +215,9 @@ export default function Cadastro() {
                   >
                     Enviar
                   </Button>
-                  <Text>
+                  {/* <Text>
                     Ao enviar seus dados você receberá um código de validação, insira-o na tela a seguir
-                  </Text>
+                  </Text> */}
                 </Box>
               </form>
             );
