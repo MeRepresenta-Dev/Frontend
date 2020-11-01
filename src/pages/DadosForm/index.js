@@ -8,6 +8,7 @@ import {
   Button,
   Heading,
   FormLabel,
+  Checkbox,
   Radio,
   Stack,
   Text,
@@ -25,28 +26,37 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 
 export default function DadosForm() {
-    const history = useHistory();
-    const userData = JSON.parse(localStorage.getItem('@merepresenta/cadastro'));
+  const history = useHistory();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
+  const [deficiencia, temDeficiencia] = useState(true)
+  const userData = JSON.parse(localStorage.getItem('@merepresenta/cadastro'));
 
-    const onSubmit = async values => {
-        try{
-          const response = await api.get("/me", values);
-          if(response.status === 200){
-            return history.push({
-              pathname: '/cadastro/candidato-pautas',
-              // data: values 
-            })
-          }
-        }
-        catch(e){
-          alert('Houve um erro ao enviar o formulário');
-        } 
-
-        localStorage.setItem('@merepresenta/form', JSON.stringify(values));
-        // history.push({pathname: '/cadastro/candidato-pautas',})
+  const onSubmit = async values => {
+    const formattedValues = {
+      ...values,
+      deficiencia: !deficiencia ? 'nao' : values.deficiencia.join(', '),
     }
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
+      console.log(formattedValues)
+
+      try{
+        const response = await api.post("/registerForm", formattedValues);
+        if(response.status === 200){
+          return history.push({
+            pathname: '/cadastro/candidato-pautas',
+            // data: values 
+          })
+        }
+      }
+      catch(e){
+        alert('Houve um erro ao enviar o formulário');
+      } 
+
+      localStorage.setItem('@merepresenta/form', JSON.stringify(formattedValues));
+      // history.push({pathname: '/cadastro/candidato-pautas',})
+  }
+
+  
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -139,7 +149,7 @@ export default function DadosForm() {
               <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Field
-                  name="corRaca"
+                  name="cor"
                   component={AdaptedRadioGroup}
                   label="Qual sua cor ou raça?">
                     <div id="espaço"></div>
@@ -163,7 +173,7 @@ export default function DadosForm() {
               <div id="espaço"></div>
               <Box className="dadosInputs">
                 <Field
-                  name="candidaturaColetiva"
+                  name="candidaturacoletiva"
                   component={AdaptedRadioGroup}
                   label="Você faz parte de uma Candidatura Coletiva?">
                     <div id="espaço"></div>
@@ -184,25 +194,29 @@ export default function DadosForm() {
                 <Control name="deficiencia" my={4}>
                   <FormLabel htmlFor="deficiencia">Você possui alguma deficiência?</FormLabel>
                   <Stack mt={1} spacing={1}>
-                    <CheckboxArrayControl name="deficiencia" value="nao">
+                    <Checkbox onChange={() => temDeficiencia(!deficiencia)} name="deficiencia" value="nao">
                       <a id="sembold">Não possuo</a>
-                    </CheckboxArrayControl>
-                    <CheckboxArrayControl name="deficiencia" value="visual">
-                      <a id="sembold" >Deficiência Visual</a>
-                    </CheckboxArrayControl>
-                    <CheckboxArrayControl name="deficiencia" value="auditiva">
-                      <a id="sembold" >Deficiência Auditiva</a>
-                    </CheckboxArrayControl>
-                    <CheckboxArrayControl name="deficiencia" value="fisica">
-                      <a id="sembold" >Deficiência Física</a>
-                    </CheckboxArrayControl>
-                    <CheckboxArrayControl name="deficiencia" value="intelectual">
-                      <a id="sembold" >Deficiência Intelectual</a>
-                    </CheckboxArrayControl>
-                    <CheckboxArrayControl name="deficiencia" value="multipla">
-                      <a id="sembold">Deficiência Multipla</a>
-                    </CheckboxArrayControl>
-                  </Stack>
+                    </Checkbox>
+                    {deficiencia && (
+                      <>
+                        <CheckboxArrayControl name="deficiencia" value="visual">
+                          <a id="sembold" >Deficiência Visual</a>
+                        </CheckboxArrayControl>
+                        <CheckboxArrayControl name="deficiencia" value="auditiva">
+                          <a id="sembold" >Deficiência Auditiva</a>
+                        </CheckboxArrayControl>
+                        <CheckboxArrayControl name="deficiencia" value="fisica">
+                          <a id="sembold" >Deficiência Física</a>
+                        </CheckboxArrayControl>
+                        <CheckboxArrayControl name="deficiencia" value="intelectual">
+                          <a id="sembold" >Deficiência Intelectual</a>
+                        </CheckboxArrayControl>
+                        <CheckboxArrayControl name="deficiencia" value="multipla">
+                          <a id="sembold">Deficiência Multipla</a>
+                        </CheckboxArrayControl>
+                      </>
+                    )}
+                    </Stack>
                   <Error name="deficiencia" />
                 </Control>
               </Box>
@@ -210,7 +224,10 @@ export default function DadosForm() {
               <div id="espaço"></div>
               
               <Box className="dadosInputs">
-              <TextareaControl name="notes" placeholder="Defendo pautas que se encaixem com …" label="Escreva um pouco sobre você ou sobre a candidatura coletiva" />
+              <TextareaControl
+                name="descricaoCandidaturaColetiva"
+                placeholder="Defendo pautas que se encaixem com …"
+                label="Escreva um pouco sobre você ou sobre a candidatura coletiva" />
               </Box>
               <div id="espaço"></div>
               <Box className="dadosInputs">
