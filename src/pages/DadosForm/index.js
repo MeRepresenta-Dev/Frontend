@@ -30,7 +30,7 @@ export default function DadosForm() {
 
     const onSubmit = async values => {
         try{
-          const response = await api.get("/registerForm", values);
+          const response = await api.get("/me", values);
           if(response.status === 200){
             return history.push({
               pathname: '/cadastro/candidato-pautas',
