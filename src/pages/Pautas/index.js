@@ -18,12 +18,7 @@ export default function CadastroPautas(){
 
   const convertedForm = JSON.parse(formData);
 
-  const pautasData = {...convertedForm};
-
-
   const history = useHistory();
-
-
 
   const continuarClick = (values) =>{
     const formattedValues = {
