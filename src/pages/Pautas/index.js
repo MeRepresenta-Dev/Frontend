@@ -47,9 +47,7 @@ export default function CadastroPautas(){
         <Box
           as="form"
           p={4}
-          borderWidth="1px"
-          rounded="lg"
-          shadow="1px 1px 3px rgba(0,0,0,0.3)"
+          style={{margin: '0 auto', width: '600px'}}
           onSubmit={handleSubmit}
         >
           <h2 id="text1">Pautas #MeRepresenta</h2>
