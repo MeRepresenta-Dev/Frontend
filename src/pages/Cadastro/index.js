@@ -39,41 +39,25 @@ export default function Cadastro() {
         secao: parseInt(values.secao, 10),
       }
 
-      localStorage.setItem('@merepresenta/cadastro', JSON.stringify(values));
+      localStorage.setItem('@merepresenta/cadastro', JSON.stringify(formattedValues));
       setLoading(true);
-      console.log('submitting', formattedValues)
-      api.post("/register", formattedValues)
-        .then((res) => {
-          if(res.status === 200){
-            setLoading(false);
-            toast({
-              title: `Sucesso!`,
-              description: "Seus dados foram enviados",
-              status: "success",
-              duration: 2000,
-              position: "top",
-              isClosable: true,
-            })
-            setTimeout(() => {
-              return history.push({
-                pathname: '/candidato/dados-form',
-                // data: values 
-              })
-            }, 2000)
-            
-          }
+      
+      toast({
+        title: `Sucesso!`,
+        description: "Prosseguindo para o cadastro de dados pessoais",
+        status: "success",
+        duration: 2000,
+        position: "top",
+        isClosable: true,
+      })
+      
+      setTimeout(() => {
+        setLoading(false);
+        return history.push({
+          pathname: '/candidato/dados-form',
+          // data: values 
         })
-        .catch((e) => {
-          setLoading(false);
-          toast({
-            title: `Erro`,
-            description: "Houve um erro ao enviar o formulário",
-            status: "error",
-            duration: 3000,
-            position: "top",
-            isClosable: true,
-          })
-        });
+      }, 2000)
       
     }
 

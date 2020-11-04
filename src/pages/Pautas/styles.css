@@ -13,6 +13,19 @@
     font-weight: normal;
     text-align: center;
 }
+.dadosInputs {
+  margin: 40px 0;
+}
+
+.numero-pauta {
+  margin: 0;
+}
+.subtitulo-pauta {
+  margin: 0 0 5px;
+}
+.descricao-pauta {
+  margin: 5px 0;
+}
 
 #TextoPautas #text2{
   font-family: "Montserrat";

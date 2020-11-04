@@ -12,6 +12,7 @@ import {
   Radio,
   Stack,
   Text,
+  useToast
 } from '@chakra-ui/core'
 import './styles.css'
 
@@ -27,33 +28,40 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export default function DadosForm() {
   const history = useHistory();
+  const toast = useToast();
+  const [isLoading, setLoading] = useState(false)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
   const [deficiencia, temDeficiencia] = useState(true)
   const userData = JSON.parse(localStorage.getItem('@merepresenta/cadastro'));
 
   const onSubmit = async values => {
     const formattedValues = {
+      ...userData,
       ...values,
       deficiencia: !deficiencia ? 'nao' : values.deficiencia.join(', '),
     }
 
-      console.log(formattedValues)
-
-      try{
-        const response = await api.post("/registerForm", formattedValues);
-        if(response.status === 200){
-          return history.push({
-            pathname: '/cadastro/candidato-pautas',
-            // data: values 
-          })
-        }
-      }
-      catch(e){
-        alert('Houve um erro ao enviar o formulário');
-      } 
-
-      localStorage.setItem('@merepresenta/form', JSON.stringify(formattedValues));
-      // history.push({pathname: '/cadastro/candidato-pautas',})
+    console.log(formattedValues)
+    
+    localStorage.setItem('@merepresenta/dados-pessoais', JSON.stringify(formattedValues)); 
+    setLoading(true);
+    toast({
+      title: `Sucesso!`,
+      description: "Prosseguindo para o cadastro de Pautas",
+      status: "success",
+      duration: 2000,
+      position: "top",
+      isClosable: true,
+    })
+    
+    setTimeout(() => {
+      setLoading(false);
+      return history.push({
+        pathname: '/cadastro/candidato-pautas',
+        // data: values 
+      })
+    }, 2000)
+      
   }
 
   
@@ -240,7 +248,7 @@ export default function DadosForm() {
               </Box>
               <Box className="dadosButtons">
                 <Button
-                  isLoading={submitting}
+                  isLoading={isLoading}
                   loadingText="Enviando"
                   variantColor="teal"
                   type="submit"
