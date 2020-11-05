@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Checkbox, Icon, useToast } from '@chakra-ui/core'
 import './style.css'
 
-export default function Score ({ label, name, value, onChangeScore }) {
+export default function Score ({ label, name, value, disabled, onChangeScore }) {
   const [level, setLevel] = useState(0)
   const [isActive, setActive] = useState(false)
   const toast = useToast();
@@ -35,7 +35,7 @@ export default function Score ({ label, name, value, onChangeScore }) {
     <div className={`Score ${isActive ? 'active' : ''}`}>
       <div className="check">
         <p className="label">{label}</p>
-        <Checkbox onChange={() => handleCheck(!isActive)} name={name} value={value} />
+        <Checkbox isDisabled={disabled} onChange={() => handleCheck(!isActive)} name={name} value={value} />
       </div>
 
       <div className="progress">

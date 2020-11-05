@@ -19,7 +19,7 @@ export default function Obrigado() {
     <div id="MasterDiv">
         <h1 id="Saudacao">OBRIGADA</h1>
         <h1 id="textSaudacao1">Você tem até dia 12 de setembro para alterar <br></br> seu cadastro e respostas na plataforma. <br></br> Para ver seu perfil, <a target="_blank" href="/login">clique aqui.</a></h1>
-        <h1 id="textSaudacao2">Não encontrou um tema importante pra você?</h1>
+        {/* <h1 id="textSaudacao2">Não encontrou um tema importante pra você?</h1>
         <h1 id="textSaudacao3" >Deixe uma sugestão pra gente!</h1>
         <div id="divInput">
             <Input id="inputText1"></Input>
@@ -27,7 +27,7 @@ export default function Obrigado() {
         <div id="textandbutton">
             <h1 id="textSaudacao4">Caracteres: 0 / 1000</h1>
             <Button id="ButtonEnviar">Enviar</Button>
-        </div>
+        </div> */}
         <div id="buttonandimages">
             <div id="buttonPautas">
             <h1 id="textSaudacao5">Saiba mais sobre as <a id="linkPautas" >#pautas</a></h1>

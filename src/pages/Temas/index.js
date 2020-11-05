@@ -37,12 +37,18 @@ const toast = useToast();
 const handleScore = (newScore) => {
   let keyScore = Object.keys(newScore)[0]
   let valueScore = Object.values(newScore)[0]
-  let newObjScore = {
-    ...score,
-    [keyScore]: valueScore
+  let newObjScore
+  const qtdScoreCards = Object.values(score).filter(vals => vals > 0).length
+  const allZeros = Object.values(score).every(val => val === 0)
+
+  if (qtdScoreCards < 3) {
+    newObjScore = {
+      ...score,
+      [keyScore]: valueScore
+    }
+    setScore(newObjScore)
   }
-  setScore(newObjScore)
-  // let newListScore = [...score.filter(el => el.title !== newScore.title), newScore].filter(el => el.score > 0);
+
   let total = 5 - (Object.values(newObjScore).reduce( (accum, curr) => {return accum + parseInt(curr, 10)}, 0));
   if(total >= 0) setTotalScore(total);
   else
@@ -54,25 +60,20 @@ const handleScore = (newScore) => {
       position: "top",
       isClosable: true,
     })
-  // if(score.length < 3) setScore(newListScore);
-  // else
-  //   toast({
-  //     title: `Atenção!`,
-  //     description: "Escolha até 3 temas",
-  //     status: "warning",
-  //     duration: 3000,
-  //     position: "top",
-  //     isClosable: true,
-  //   })
+
+
   console.log(newObjScore, total)
 }
 
 const irParaSaudacao  = async () =>{
-  
+  const formattedValues = {
+    ...convertedForm,
+    ...score
+  }
   try{
-    const response = await api.post("/save", temasData);
+    const response = await api.post("/register", formattedValues);
     if(response.status === 200){
-      return history.push('/candidatos/saudacao');
+      return history.push('/candidato/saudacao');
     }
   }
   catch(e){
@@ -94,34 +95,34 @@ const irParaSaudacao  = async () =>{
 
           <div id="divAux2">    
             <div id="divGenero" >
-              <Score label="#Genero" name="bla" value="genero" onChangeScore={handleScore} />
+              <Score label="#Genero" value="genero" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#LGBT+" name="bla" value="lgbt" onChangeScore={handleScore} />
+              <Score label="#LGBT+" value="lgbt" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Raça" name="bla" value="raca" onChangeScore={handleScore} />
+              <Score label="#Raça" value="raca" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Povos Tradicionais" name="bla" value="povostradicionais" onChangeScore={handleScore} />
+              <Score label="#Povos Tradicionais" value="povostradicionais" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Políticas Sociais" name="bla" value="politicassociais" onChangeScore={handleScore} />
+              <Score label="#Políticas Sociais" value="politicassociais" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Segurança Pública" name="bla" value="segurancapublica" onChangeScore={handleScore} />
+              <Score label="#Segurança Pública" value="segurancapublica" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Drogas" name="bla" value="drogas" onChangeScore={handleScore} />
+              <Score label="#Drogas" value="drogas" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Comunicação" name="bla" value="comunicacao" onChangeScore={handleScore} />
+              <Score label="#Comunicação" value="comunicacao" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Democracia" name="bla" value="democracia" onChangeScore={handleScore} />
+              <Score label="#Democracia" value="democracia" onChangeScore={handleScore} />
             </div>
             <div id="divGenero" >
-              <Score label="#Meio Ambiente" name="bla" value="meioambiente" onChangeScore={handleScore} />
+              <Score label="#Meio Ambiente" value="meioambiente" onChangeScore={handleScore} />
             </div>
           </div>
       
