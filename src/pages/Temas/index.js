@@ -34,6 +34,7 @@ const temasData = {...score};
 const history = useHistory();
 const toast = useToast();
 
+const scoreSum = (scoreObj) => Object.values(scoreObj).reduce( (accum, curr) => {return accum + parseInt(curr, 10)}, 0)
 const handleScore = (newScore) => {
   let keyScore = Object.keys(newScore)[0]
   let valueScore = Object.values(newScore)[0]
@@ -49,7 +50,7 @@ const handleScore = (newScore) => {
     setScore(newObjScore)
   }
 
-  let total = 5 - (Object.values(newObjScore).reduce( (accum, curr) => {return accum + parseInt(curr, 10)}, 0));
+  let total = 5 - scoreSum(newObjScore);
   if(total >= 0) setTotalScore(total);
   else
     toast({
@@ -70,15 +71,26 @@ const irParaSaudacao  = async () =>{
     ...convertedForm,
     ...score
   }
-  try{
-    const response = await api.post("/register", formattedValues);
-    if(response.status === 200){
-      return history.push('/candidato/saudacao');
+  if (scoreSum(score) < 5) {
+    toast({
+      title: `Erro!`,
+      description: "Distribua os 5 pontos entre os temas",
+      status: "error",
+      duration: 3000,
+      position: "top",
+      isClosable: true,
+    })
+  } else {
+    try{
+      const response = await api.post("/register", formattedValues);
+      if(response.status === 200){
+        return history.push('/candidato/saudacao');
+      }
     }
+    catch(e){
+      alert('Houve um erro ao enviar os dados');
+    }  
   }
-  catch(e){
-    alert('Houve um erro ao enviar os dados');
-  }  
 }
 
   return (        
