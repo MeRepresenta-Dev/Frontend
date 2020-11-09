@@ -28,6 +28,9 @@ const [score, setScore] = useState({
   meioambiente: '0'
 });
 const [totalScore, setTotalScore] = useState(5);
+const [choosenThemes, setChoosenThemes] = useState([]);
+const [choosenObj, setChoosenObj] = useState({});
+const [loading, setLoading] = useState(false);
 const dadosPaginaAnt = localStorage.getItem('@merepresenta/pautas');
 const convertedForm = JSON.parse(dadosPaginaAnt);
 const temasData = {...score};
@@ -35,64 +38,107 @@ const history = useHistory();
 const toast = useToast();
 
 const scoreSum = (scoreObj) => Object.values(scoreObj).reduce( (accum, curr) => {return accum + parseInt(curr, 10)}, 0)
-const handleScore = (newScore) => {
-  let keyScore = Object.keys(newScore)[0]
-  let valueScore = Object.values(newScore)[0]
-  let newObjScore
-  const qtdScoreCards = Object.values(score).filter(vals => vals > 0).length
-  const allZeros = Object.values(score).every(val => val === 0)
 
-  if (qtdScoreCards < 3) {
-    newObjScore = {
-      ...score,
-      [keyScore]: valueScore
-    }
-    setScore(newObjScore)
+const getKeyVal = (newScore) => {
+  const keyScore = Object.keys(newScore)[0]
+  const valueScore = Object.values(newScore)[0]
+
+  return {
+    key: keyScore,
+    value: valueScore
   }
+}
 
-  let total = 5 - scoreSum(newObjScore);
-  if(total >= 0) setTotalScore(total);
+const setThemeList = (newScore) => {
+  const theme = getKeyVal(newScore)
+  let listThemes = [...choosenThemes];
+
+  if(listThemes.find(t => t[theme.key])){
+    if(theme.value == 0)
+      listThemes = [...listThemes.filter(th => Object.keys(th)[0] !== theme.key)]
+    else
+      listThemes = [...listThemes.filter(th => Object.keys(th)[0] !== theme.key), newScore]
+  }
+  else {
+    if(parseInt(theme.value, 10) > 0)
+      listThemes = [...listThemes, newScore]
+  }
+  
+  const totalScoreSum = listThemes.reduce((acc, obj) =>  acc + parseInt(Object.values(obj)[0], 10), 0)
+  
+  if(totalScoreSum <= 5){
+    setChoosenThemes(listThemes)
+    const mapped = listThemes.map(item => ({ [Object.keys(item)[0]]: Object.values(item)[0] }) );
+    const newObj = Object.assign({}, ...mapped );
+    setChoosenObj({...score, ...newObj})
+  }
   else
     toast({
       title: `Atenção!`,
-      description: "Você tem até 5 pontos para distribuir",
+      description: "Você excedeu o limite de 5 pontos",
+      status: "warning",
+      duration: 3000,
+      position: "top",
+      isClosable: true,
+    })
+ 
+}
+
+const handleScore = (newScore) => {
+  if(choosenThemes.length < 3)
+    setThemeList(newScore)
+  else
+    toast({
+      title: `Atenção!`,
+      description: "Você excedeu o limite de 3 temas",
       status: "warning",
       duration: 3000,
       position: "top",
       isClosable: true,
     })
 
-
-  console.log(newObjScore, total)
 }
 
-const irParaSaudacao  = async () =>{
-  const formattedValues = {
-    ...convertedForm,
-    ...score
-  }
-  if (scoreSum(score) < 5) {
-    toast({
-      title: `Erro!`,
-      description: "Distribua os 5 pontos entre os temas",
-      status: "error",
-      duration: 3000,
-      position: "top",
-      isClosable: true,
-    })
-  } else {
+  const irParaSaudacao  = async () =>{
+    const formattedValues = {
+      ...convertedForm,
+      ...choosenObj
+    }
+
+    setLoading(true)
     try{
       const response = await api.post("/register", formattedValues);
       if(response.status === 200){
-        return history.push('/candidato/saudacao');
+        toast({
+          title: `Sucesso!`,
+          description: "Dados cadastrados",
+          status: "success",
+          duration: 2000,
+          position: "top",
+          isClosable: true,
+        })
+
+        setTimeout(() => {
+          setLoading(false);
+          return history.push('/candidato/saudacao');
+        }, 2000)
       }
     }
     catch(e){
-      alert('Houve um erro ao enviar os dados');
+      setLoading(false)
+      toast({
+        title: `Erro ${e.response.status}!`,
+        description: "Houve um erro ao enviar o formulário",
+        status: "error",
+        duration: 3000,
+        position: "top",
+        isClosable: true,
+      })
     }  
   }
-}
 
+  const formDisabled = choosenThemes.reduce((acc, obj) =>  acc + parseInt(Object.values(obj)[0], 10), 0) < 5 || choosenThemes.length == 0
+  
   return (        
         <div id="divPrincipal">
           <div id="divAux1" >
@@ -139,7 +185,11 @@ const irParaSaudacao  = async () =>{
           </div>
       
           <div id="divContinuar">
-            <Button onClick={() => irParaSaudacao()} id="ButtonContinuar" >Continuar</Button>
+            <Button onClick={() => irParaSaudacao()} 
+              disabled={formDisabled} 
+              isLoading={loading}
+              loadingText="Enviando"
+              id="ButtonContinuar" >Continuar</Button>
           </div>
       </div>
     </div>

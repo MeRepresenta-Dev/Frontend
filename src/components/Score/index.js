@@ -3,7 +3,7 @@ import { Checkbox, Icon, useToast } from '@chakra-ui/core'
 import './style.css'
 
 export default function Score ({ label, name, value, disabled, onChangeScore }) {
-  const [level, setLevel] = useState(0)
+  const [level, setLevel] = useState(-1)
   const [isActive, setActive] = useState(false)
   const toast = useToast();
   const barList = new Array(5);
@@ -27,7 +27,7 @@ export default function Score ({ label, name, value, disabled, onChangeScore }) 
   }
 
   useEffect(() =>{
-    handleScore(level)
+    level !== -1 && handleScore(level)
   }, [level])
 
 
