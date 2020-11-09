@@ -37,7 +37,7 @@ const temasData = {...score};
 const history = useHistory();
 const toast = useToast();
 
-const scoreSum = (scoreObj) => Object.values(scoreObj).reduce( (accum, curr) => {return accum + parseInt(curr, 10)}, 0)
+// const scoreSum = (scoreObj) => Object.values(scoreObj).reduce( (accum, curr) => {return accum + parseInt(curr, 10)}, 0)
 
 const getKeyVal = (newScore) => {
   const keyScore = Object.keys(newScore)[0]
@@ -60,11 +60,11 @@ const setThemeList = (newScore) => {
       listThemes = [...listThemes.filter(th => Object.keys(th)[0] !== theme.key), newScore]
   }
   else {
-    if(parseInt(theme.value, 10) > 0)
+    if(theme.value > 0)
       listThemes = [...listThemes, newScore]
   }
   
-  const totalScoreSum = listThemes.reduce((acc, obj) =>  acc + parseInt(Object.values(obj)[0], 10), 0)
+  const totalScoreSum = listThemes.reduce((acc, obj) =>  acc + Object.values(obj)[0], 0)
   
   if(totalScoreSum <= 5){
     setChoosenThemes(listThemes)
@@ -137,7 +137,7 @@ const handleScore = (newScore) => {
     }  
   }
 
-  const formDisabled = choosenThemes.reduce((acc, obj) =>  acc + parseInt(Object.values(obj)[0], 10), 0) < 5 || choosenThemes.length == 0
+  const formDisabled = choosenThemes.reduce((acc, obj) =>  acc + Object.values(obj)[0], 0) < 5 || choosenThemes.length == 0
   
   return (        
         <div id="divPrincipal">
