@@ -85,7 +85,14 @@ export default function Cadastro() {
                   }
         
                } catch (e) {
-                console.log(e)
+                toast({
+                  title: `Erro!`,
+                  description: "Falha ao fazer upload da foto. Por favor, tente novamente",
+                  status: "error",
+                  duration: 4000,
+                  position: "top",
+                  isClosable: true,
+                })
                }                
             }
 
@@ -94,21 +101,21 @@ export default function Cadastro() {
                 <div className="form-group">
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Dados da candidatura</Heading>
                   <label htmlFor="email">
-                    <span>Nome de Urna (<Tooltip label="Localizada no título de eleitor, a seção eleitoral é composta por uma sequência de 4 dígitos
-">?</Tooltip>)</span>
-                    <Input id="name" name="name" onChange={(event) => {
+                    <span>Nome de Urna </span>
+                    <Input id="name" isRequired name="name" onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
                   <label htmlFor="cpf">
                     <span>CPF</span>
-                    <Input id="cpf" name="cpf" onChange={(event) => {
+                    <Input id="cpf" name="cpf" isRequired onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
                   <label htmlFor="secao">
-                    <span>Seção Eleitoral</span>
-                    <Input id="secao" name="secao" onChange={(event) => {
+                    <span>Seção Eleitoral(<Tooltip label="Localizada no título de eleitor, a seção eleitoral é composta por uma sequência de 4 dígitos
+">?</Tooltip>)</span>
+                    <Input id="secao" name="secao" isRequired onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
@@ -118,13 +125,13 @@ export default function Cadastro() {
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Para mantermos contato:</Heading>
                   <label htmlFor="telefone">
                     <span>Telefone Celular com DDD</span>
-                    <Input id="telefone" name="telefone" placeholder="+55 21925640835" onChange={(event) => {
+                    <Input id="telefone" name="telefone" isRequired placeholder="+55 21925640835" onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
                   <label htmlFor="email">
                     <span>E-mail</span>
-                    <Input id="email" name="email" onChange={(event) => {
+                    <Input id="email" name="email" isRequired onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
@@ -155,7 +162,7 @@ export default function Cadastro() {
                 <div className="form-group">
                   <label htmlFor="preenchimentoCandidato">
                     <Heading className="cadastroInputsHeading" as="h2" size="lg">Quem está preenchendo o cadastro é a/o própria/o candidata/o?</Heading>
-                    <RadioGroup name="preenchimentoCandidato" onChange={event => setFieldValue(event.target.name, event.target.value)}>
+                    <RadioGroup name="preenchimentoCandidato" isRequired onChange={event => setFieldValue(event.target.name, event.target.value)}>
                       <Radio value="Sim">Sim</Radio>
                       <Radio value="Nao">Não</Radio>
                     </RadioGroup>
@@ -166,13 +173,13 @@ export default function Cadastro() {
                   <Heading className="cadastroInputsHeading" as="h2" size="lg">Cadastre uma senha para acesso futuro</Heading>
                   <label htmlFor="email">
                     <span>Senha</span>
-                    <Input id="password" name="password" type="password" onChange={(event) => {
+                    <Input id="password" name="password" isRequired type="password" onChange={(event) => {
                         setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
                   <label htmlFor="cpf">
                     <span>Confirme sua senha</span>
-                    <Input id="confirmaSenha" name="confirmaSenha" type="password" onChange={(event) => {
+                    <Input id="confirmaSenha" name="confirmaSenha" isRequired type="password" onChange={(event) => {
                     setFieldValue(event.target.name, event.target.value);
                   }} />
                   </label>
@@ -187,12 +194,13 @@ export default function Cadastro() {
                       coletiva você deverá usar a imagem com todos os integrantes.
                     </Text>
                   </Box>
-                  <input id="photo" name="photo" className="inputPhoto" type="file" onChange={onSendPhoto} className="form-control" />
+                  <input id="photo" name="photo" className="inputPhoto" isRequired type="file" onChange={onSendPhoto} className="form-control" />
                 </div>
 
                 <Box className="cadastroButtons">
                   <Button
                     isLoading={isLoading}
+                    isDisabled={!values.photo}
                     loadingText="Enviando"
                     variantColor="pink"
                     type="submit"

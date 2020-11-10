@@ -25,19 +25,34 @@ export default function CadastroPautas(){
       ...values,
       ...convertedForm
     }
-    
-    if (Object.keys(values).length < 24)
-      alert("Todos os campos são obrigatórios")
-    else {
+ 
       localStorage.setItem('@merepresenta/pautas', JSON.stringify(formattedValues));
       history.push({pathname: '/cadastro/candidato-temas'})
-    }
       // console.log(formattedValues)
   }
 
   return(
     <Form
       onSubmit={continuarClick}
+      validate={values => {
+        const errors = {}
+        const pautasPreenchidas = Object.keys(values).length
+        const totalPautas = new Array(24)
+        const faltaPreencher = totalPautas.length - pautasPreenchidas        
+
+        for(let i = 0; i < 24; i++) {
+          if (!values[`pauta${i+1}`]) {
+            errors[`pauta${i+1}`] = `Preencha a pauta ${i+1}`
+          }
+        }
+
+        if(pautasPreenchidas < totalPautas.length) {
+          errors.pauta24 = `Falta preencher ${faltaPreencher} pauta${faltaPreencher > 1 ? 's' : ''}`
+          
+        }
+        console.log(errors)
+        return errors
+      }}
       render={({
         handleSubmit,
         form,
@@ -63,6 +78,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta1"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -88,6 +104,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta2"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -108,6 +125,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta3"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -130,6 +148,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta4"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -152,6 +171,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta5"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -174,6 +194,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta6"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -197,6 +218,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta7"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -217,6 +239,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta8"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -239,6 +262,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta9"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -261,6 +285,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta10"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -283,6 +308,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta11"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -304,6 +330,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta12"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -326,6 +353,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta13"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -348,6 +376,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta14"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -371,6 +400,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta15"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -393,6 +423,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta16"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -417,6 +448,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta17"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -439,6 +471,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta18"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -462,6 +495,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta19"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -484,6 +518,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta20"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -507,6 +542,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta21"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -525,6 +561,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta22"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -549,6 +586,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta23"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">
@@ -571,6 +609,7 @@ export default function CadastroPautas(){
             <Field
               name="pauta24"
               component={AdaptedRadioGroup}
+              isRequired
               label="Qual o seu posicionamento?">
                 <div id="espaço"></div>
               <Radio value="favor">

@@ -16,23 +16,27 @@ import api from "../../services/api";
 export default function Temas() {
 
 const [score, setScore] = useState({
-  genero: '0',
-  raca: '0',
-  lgbt: '0',
-  povostradicionais: '0',
-  politicassociais: '0',
-  segurancapublica: '0',
-  drogas: '0',
-  comunicacao: '0',
-  democracia: '0',
-  meioambiente: '0'
+  genero: 0,
+  raca: 0,
+  lgbt: 0,
+  povostradicionais: 0,
+  politicassociais: 0,
+  segurancapublica: 0,
+  drogas: 0,
+  comunicacao: 0,
+  democracia: 0,
+  meioambiente: 0
 });
 const [totalScore, setTotalScore] = useState(5);
 const [choosenThemes, setChoosenThemes] = useState([]);
 const [choosenObj, setChoosenObj] = useState({});
 const [loading, setLoading] = useState(false);
-const dadosPaginaAnt = localStorage.getItem('@merepresenta/pautas');
-const convertedForm = JSON.parse(dadosPaginaAnt);
+const dadosCadastro = localStorage.getItem('@merepresenta/cadastro');
+const dadosForm = localStorage.getItem('@merepresenta/dados-form');
+const dadosPautas = localStorage.getItem('@merepresenta/pautas');
+const converted1 = JSON.parse(dadosCadastro);
+const converted2 = JSON.parse(dadosForm);
+const converted3 = JSON.parse(dadosPautas);
 const temasData = {...score};
 const history = useHistory();
 const toast = useToast();
@@ -101,10 +105,13 @@ const handleScore = (newScore) => {
 
   const irParaSaudacao  = async () =>{
     const formattedValues = {
-      ...convertedForm,
+      ...converted1,
+      ...converted2,
+      ...converted3,
       ...choosenObj
     }
-
+    
+    console.log('localStorageFinal', formattedValues)
     setLoading(true)
     try{
       const response = await api.post("/register", formattedValues);
@@ -117,20 +124,21 @@ const handleScore = (newScore) => {
           position: "top",
           isClosable: true,
         })
-
         setTimeout(() => {
           setLoading(false);
+          localStorage.removeItem('@merepresenta/cadastro')
           return history.push('/candidato/saudacao');
         }, 2000)
       }
     }
     catch(e){
       setLoading(false)
+      console.log(e)
       toast({
-        title: `Erro ${e.response.status}!`,
+        title: `Erro!`,
         description: "Houve um erro ao enviar o formulário",
         status: "error",
-        duration: 3000,
+        duration: 4000,
         position: "top",
         isClosable: true,
       })

@@ -43,7 +43,7 @@ export default function DadosForm() {
 
     console.log(formattedValues)
     
-    localStorage.setItem('@merepresenta/dados-pessoais', JSON.stringify(formattedValues)); 
+    localStorage.setItem('@merepresenta/dados-form', JSON.stringify(formattedValues)); 
     setLoading(true);
     toast({
       title: `Sucesso!`,
@@ -88,6 +88,25 @@ export default function DadosForm() {
           </Text>
           <Form
             onSubmit={onSubmit}
+            validate={values => {
+              const errors = {}
+              if (!values.identidadeGenero) {
+                errors.identidadeGenero = 'Escolha uma opção'
+              }
+              if (!values.orientacaoSexualAfetiva) {
+                errors.orientacaoSexualAfetiva = 'Escolha uma opção'
+              }
+              if (!values.cor) {
+                errors.cor = 'Escolha uma opção'
+              }
+              if (!values.candidaturacoletiva) {
+                errors.candidaturacoletiva = 'Escolha uma opção'
+              }
+              if (!values.descricaoCandidaturaColetiva) {
+                errors.descricaoCandidaturaColetiva = 'Marque pelo menos uma opção'
+              }
+              return errors
+            }}
             render={({
               handleSubmit,
               form,
@@ -106,9 +125,11 @@ export default function DadosForm() {
 
               <Box className="dadosInputs">
                 <Field
+                  isRequired
                   name="identidadeGenero"
                   component={AdaptedRadioGroup}
                   label="Como você se identifica?">
+                    
                     <div id="espaço"></div>
                   <Radio value="mulherCis">
                    <a id="sembold"> Mulher cis</a>
@@ -225,7 +246,6 @@ export default function DadosForm() {
                       </>
                     )}
                     </Stack>
-                  <Error name="deficiencia" />
                 </Control>
               </Box>
 
@@ -249,6 +269,7 @@ export default function DadosForm() {
               <Box className="dadosButtons">
                 <Button
                   isLoading={isLoading}
+                  // isDisabled={}
                   loadingText="Enviando"
                   variantColor="teal"
                   type="submit"
