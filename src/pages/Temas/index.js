@@ -89,7 +89,7 @@ const setThemeList = (newScore) => {
 }
 
 const handleScore = (newScore) => {
-  if(choosenThemes.length < 3)
+ // if(choosenThemes.length < 3)
     setThemeList(newScore)
   else
     toast({
